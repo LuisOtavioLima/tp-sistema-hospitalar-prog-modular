@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Hospitalar</title>
+    
+    <!-- espaço para links futuros de fontes, ícones, global css, etc -->
+</head>
+<body>
+    
+    <!-- cabeçalho: js conecta o header.html aqui -->
+    <div id="header"></div>
+
+    <!-- loader -->
+    <div id="loader" class="hidden">
+        <p>Carregando...</p>
+    </div>
+
+    <!-- contêiner principal: as páginas (dashboard, consultas) são carregadas aqui -->
+    <div id="content"></div>
+
+    <!-- cérebro: tyle="module" permite a divisão do js em vários arquivos menores, bem como a importação e exportação entre eles-->
+    <script type="module" src="./assets/js/main.js"></script>
+
+</body>
+</html>
