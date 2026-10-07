@@ -1,11 +1,11 @@
 /* variáveis globais */
 :root {
-    --cor-primaria: #2c3e50;    
-    --cor-secundaria: #3498db;  
-    --cor-fundo: #f4f6f9;   
-    --cor-fundo-secundaria: #e1e9f5;    
-    --cor-texto: #000000;
-    --fonte-padrao: "Inter", sans-serif;
+    --cor-primaria: #254EDB;    
+    --cor-secundaria: #CBD5E1;  
+    --cor-fundo: #F1F5F9;   
+    --cor-fundo-secundaria: #FFFFFF;    
+    --cor-texto: #1E293B;
+    --fonte-padrao: 'Inter', sans-serif;
 }
 
 /* reset básico para todos os elementos */
