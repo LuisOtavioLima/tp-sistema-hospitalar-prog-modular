@@ -1,4 +1,161 @@
 <div class="dashboard-container">
-    <h2>Visão Geral do Hospital</h2>
-    <p>Bem-vindo ao sistema de gerenciamento hospitalar.</p>
+    <div class="dashboard-container">
+    <!-- Cabeçalho do Dashboard -->
+    <header class="dash-header">
+        <div class="dash-title">
+            <span class="breadcrumb">Início > Dashboard</span>
+            <h1>Dashboard</h1>
+            <span class="subtitle">Visão geral do dia · dd/mm/aaaa</span>
+        </div>
+        <div class="dash-actions">
+            <button class="btn-outline">Nova internação</button>
+            <button class="btn-primary">+ Agendar consulta</button>
+        </div>
+    </header>
+
+    <!-- Cartões de Resumo Superiores -->
+    <section class="summary-grid">
+        <div class="card card-summary">
+            <h3>Pacientes cadastrados</h3>
+            <span class="number">000</span>
+            <span class="detail">+00 novos nesta semana</span>
+        </div>
+        <div class="card card-summary">
+            <h3>Consultas hoje</h3>
+            <span class="number">00</span>
+            <span class="detail">00 realizadas · 00 restantes</span>
+        </div>
+        <div class="card card-summary">
+            <h3>Internações ativas</h3>
+            <span class="number">00</span>
+            <span class="detail">00 altas previstas para hoje</span>
+        </div>
+        <div class="card card-summary">
+            <h3>Ocupação dos quartos</h3>
+            <span class="number">00%</span>
+            <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 50%;"></div></div>
+            <span class="detail">00 de 00 leitos ocupados</span>
+        </div>
+    </section>
+
+    <!-- Linha do Meio: Tabela e Ocupação por Andar -->
+    <section class="middle-grid">
+        <div class="card table-card">
+            <div class="card-header">
+                <h3>Próximas consultas de hoje</h3>
+                <a href="#">Ver agenda completa</a>
+            </div>
+            <table class="dash-table">
+                <thead>
+                    <tr>
+                        <th>HORÁRIO</th>
+                        <th>PACIENTE</th>
+                        <th>PROFISSIONAL</th>
+                        <th>ESPECIALIDADE</th>
+                        <th>STATUS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>08:00</td>
+                        <td>Paciente 01</td>
+                        <td>Profissional 01</td>
+                        <td>Cardiologia</td>
+                        <td><span class="badge badge-realizada">Realizada</span></td>
+                    </tr>
+                    <tr>
+                        <td>08:30</td>
+                        <td>Paciente 02</td>
+                        <td>Profissional 02</td>
+                        <td>Clínica geral</td>
+                        <td><span class="badge badge-atendimento">Em atendimento</span></td>
+                    </tr>
+                    <tr>
+                        <td>09:00</td>
+                        <td>Paciente 03</td>
+                        <td>Profissional 01</td>
+                        <td>Cardiologia</td>
+                        <td><span class="badge badge-agendada">Agendada</span></td>
+                    </tr>
+                    <tr>
+                        <td>09:30</td>
+                        <td>Paciente 04</td>
+                        <td>Profissional 03</td>
+                        <td>Pediatria</td>
+                        <td><span class="badge badge-agendada">Agendada</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card occupancy-card">
+            <div class="card-header">
+                <h3>Ocupação por andar</h3>
+                <a href="#">Ver quartos</a>
+            </div>
+            <div class="floor-stats">
+                <div class="floor-row">
+                    <div class="floor-info"><span>1º andar</span><span>00/00 leitos</span></div>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill dark" style="width: 80%;"></div></div>
+                </div>
+                <div class="floor-row">
+                    <div class="floor-info"><span>2º andar</span><span>00/00 leitos</span></div>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill dark" style="width: 90%;"></div></div>
+                </div>
+                <div class="floor-row">
+                    <div class="floor-info"><span>3º andar</span><span>00/00 leitos</span></div>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill dark" style="width: 40%;"></div></div>
+                </div>
+            </div>
+            <span class="detail-bottom">Leitos ocupados em relação à capacidade total de cada andar.</span>
+        </div>
+    </section>
+
+    <!-- Linha Inferior: Altas, Gráfico e Cadastros Rápidos -->
+    <section class="bottom-grid">
+        <div class="card discharge-card">
+            <div class="card-header">
+                <h3>Altas previstas · próximos 3 dias</h3>
+                <a href="#">Ver internações</a>
+            </div>
+            <div class="discharge-list">
+                <div class="discharge-item">
+                    <div class="patient-info">
+                        <strong>Paciente 07</strong>
+                        <span>Quarto 104 · 1º andar · Alta prevista dd/mm</span>
+                    </div>
+                    <button class="btn-outline-small">Registrar alta</button>
+                </div>
+                <div class="discharge-item">
+                    <div class="patient-info">
+                        <strong>Paciente 08</strong>
+                        <span>Quarto 202 · 2º andar · Alta prevista dd/mm</span>
+                    </div>
+                    <button class="btn-outline-small">Registrar alta</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card chart-card">
+            <h3>Consultas por dia · últimos 7 dias</h3>
+            <div class="fake-chart">
+                <!-- Barras simuladas com CSS -->
+                <div class="bar-col"><div class="bar" style="height: 60%;"></div><span>Seg</span></div>
+                <div class="bar-col"><div class="bar" style="height: 80%;"></div><span>Ter</span></div>
+                <div class="bar-col"><div class="bar" style="height: 50%;"></div><span>Qua</span></div>
+                <div class="bar-col"><div class="bar" style="height: 90%;"></div><span>Qui</span></div>
+                <div class="bar-col"><div class="bar" style="height: 40%;"></div><span>Sex</span></div>
+            </div>
+        </div>
+
+        <div class="card quick-actions-card">
+            <h3>Cadastros rápidos</h3>
+            <div class="quick-buttons">
+                <button class="btn-quick">Novo paciente <span>+</span></button>
+                <button class="btn-quick">Novo profissional <span>+</span></button>
+                <button class="btn-quick">Novo quarto <span>+</span></button>
+            </div>
+        </div>
+    </section>
+</div>
 </div>
