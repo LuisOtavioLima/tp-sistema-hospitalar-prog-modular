@@ -5,7 +5,11 @@
     --cor-fundo: #F2F2EF;   
     --cor-fundo-secundaria: #FFFFFF;    
     --cor-texto: #1E293B;
+    --cor-texto-suave: #64748B;
+    --cor-primaria-suave: #E4EAFB;
+    --cor-borda: #E2E8F0;
     --fonte-padrao: 'Inter', sans-serif;
+    --fonte-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
 
 /* reset básico para todos os elementos */
@@ -27,7 +31,8 @@ body {
 }
 
 #sidebar {
-    width: 250px; 
+    width: 220px;
+    flex-shrink: 0; /* impede que a sidebar seja espremida pelo conteúdo */
     background-color: var(--cor-fundo-secundaria);
 }
 
