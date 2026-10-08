@@ -38,5 +38,6 @@ body {
 
 #content {
     flex: 1; /* faz o conteúdo das páginas preencher o resto do espaço */
+    min-width: 0; /* deixa o conteúdo encolher; tabelas largas rolam dentro do próprio card */
     background-color: var(--cor-fundo);
 }
