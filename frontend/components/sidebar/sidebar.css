@@ -1,0 +1,68 @@
+.sidebar {
+    height: 100%;
+    background-color: var(--cor-fundo-secundaria);
+    border-right: 1px solid var(--cor-borda);
+}
+
+.sidebar-nav {
+    position: sticky; /* mantém o menu visível ao rolar a página */
+    top: 0;
+    padding: 16px 8px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.sidebar-secao {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.sidebar-titulo {
+    padding: 0 8px 6px;
+    font-family: var(--fonte-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--cor-texto-suave);
+}
+
+.sidebar-link {
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: var(--cor-texto);
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-link:hover {
+    background-color: var(--cor-fundo);
+}
+
+/* marcador quadrado do wireframe; pode ser trocado por ícones svg depois */
+.sidebar-icone {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    border: 1.5px solid var(--cor-texto-suave);
+    border-radius: 3px;
+}
+
+/* página atual: definida pelo sidebar.js */
+.sidebar-link.ativo {
+    background-color: var(--cor-primaria-suave);
+    color: var(--cor-primaria);
+    font-weight: 600;
+}
+
+.sidebar-link.ativo .sidebar-icone {
+    background-color: var(--cor-primaria);
+    border-color: var(--cor-primaria);
+}
