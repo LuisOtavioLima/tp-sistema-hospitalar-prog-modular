@@ -24,13 +24,19 @@
     <!-- cabeçalho: js conecta o header.html aqui -->
     <div id="header"></div>
 
-    <!-- loader -->
-    <div id="loader" class="hidden">
-        <p>Carregando...</p>
+    <!-- contêiner para deixar sidebar e conteúdo lado a lado -->
+    <div class="layout-principal">
+        
+        <!-- sidebar: js conecta o sidebar.html aqui -->
+        <div id="sidebar"></div>
+
+        <!-- contêiner principal: as páginas são carregadas aqui -->
+        <div id="content"></div>
+        
     </div>
 
-    <!-- contêiner principal: as páginas (dashboard, consultas) são carregadas aqui -->
-    <div id="content"></div>
+    <!-- rodapé: js conecta o footer.html aqui -->
+    <div id="footer"></div>
 
     <!-- cérebro: tyle="module" permite a divisão do js em vários arquivos menores, bem como a importação e exportação entre eles-->
     <script type="module" src="./assets/js/main.js"></script>

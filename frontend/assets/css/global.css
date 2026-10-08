@@ -2,7 +2,7 @@
 :root {
     --cor-primaria: #254EDB;    
     --cor-secundaria: #CBD5E1;  
-    --cor-fundo: #F1F5F9;   
+    --cor-fundo: #F2F2EF;   
     --cor-fundo-secundaria: #FFFFFF;    
     --cor-texto: #1E293B;
     --fonte-padrao: 'Inter', sans-serif;
@@ -19,4 +19,19 @@ body {
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
     font-family: var(--fonte-padrao);
+}
+
+.layout-principal {
+    display: flex; 
+    min-height: calc(100vh - 100px); /* garante que a área central empurre o rodapé para baixo */
+}
+
+#sidebar {
+    width: 250px; 
+    background-color: var(--cor-fundo-secundaria);
+}
+
+#content {
+    flex: 1; /* faz o conteúdo das páginas preencher o resto do espaço */
+    background-color: var(--cor-fundo);
 }
