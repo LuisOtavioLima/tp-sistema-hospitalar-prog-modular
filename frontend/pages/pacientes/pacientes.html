@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pacientes — Sistema Hospitalar</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="pacientes.css">
+</head>
+<body>
+<div class="layout">
+<main class="main">
+  <div class="container">
+    <div class="page-head">
+      <div>
+        <nav class="breadcrumb" aria-label="Trilha de navegação"><a href="dashboard.html">Início</a> › Pacientes</nav>
+        <h1>Pacientes</h1>
+        <p class="muted" style="font-size:14px">Cadastro de pacientes e histórico de atendimentos</p>
+      </div>
+      <a class="btn btn--primary" href="#">+ Novo paciente</a>
+    </div>
+
+    <section class="filters" aria-label="Filtros">
+      <label class="field" style="flex:3 1 280px">Buscar paciente
+        <input class="input" type="search" placeholder="Nome ou CPF">
+      </label>
+      <label class="field" style="flex:1 1 200px">Ordenar por
+        <select class="input">
+          <option>Nome (A–Z)</option><option>Cadastro mais recente</option><option>Data de nascimento</option>
+        </select>
+      </label>
+      <button class="btn" type="button">Limpar filtros</button>
+    </section>
+
+    <div class="row">
+      <section class="list" aria-label="Lista de pacientes">
+        <div class="list__scroll"><div class="list__table">
+          <div class="list__row list__row--head"><span>Nome</span><span>CPF</span><span>Nascimento</span><span>Telefone</span><span>E-mail</span><span>Ações</span></div>
+            <div class="list__row is-selected" data-nome="Paciente 01" data-ini="P01" data-cpf="000.000.000-00" data-nasc="dd/mm/aaaa" data-tel="(00) 00000-0000" data-email="paciente01@exemplo.com">
+              <span class="list__name">Paciente 01</span>
+              <span class="mono-sm">000.000.000-00</span>
+              <span class="mono-sm">dd/mm/aaaa</span>
+              <span class="mono-sm">(00) 00000-0000</span>
+              <span class="ellipsis">paciente01@exemplo.com</span>
+              <span class="list__actions"><button class="link-btn" type="button" data-pick>Ver</button><a class="link-btn" href="#">Editar</a></span>
+            </div>
+            <div class="list__row" data-nome="Paciente 02" data-ini="P02" data-cpf="000.000.000-00" data-nasc="dd/mm/aaaa" data-tel="(00) 00000-0000" data-email="paciente02@exemplo.com">
+              <span class="list__name">Paciente 02</span>
+              <span class="mono-sm">000.000.000-00</span>
+              <span class="mono-sm">dd/mm/aaaa</span>
+              <span class="mono-sm">(00) 00000-0000</span>
+              <span class="ellipsis">paciente02@exemplo.com</span>
+              <span class="list__actions"><button class="link-btn" type="button" data-pick>Ver</button><a class="link-btn" href="#">Editar</a></span>
+            </div>
+            <div class="list__row" data-nome="Paciente 03" data-ini="P03" data-cpf="000.000.000-00" data-nasc="dd/mm/aaaa" data-tel="(00) 00000-0000" data-email="paciente03@exemplo.com">
+              <span class="list__name">Paciente 03</span>
+              <span class="mono-sm">000.000.000-00</span>
+              <span class="mono-sm">dd/mm/aaaa</span>
+              <span class="mono-sm">(00) 00000-0000</span>
+              <span class="ellipsis">paciente03@exemplo.com</span>
+              <span class="list__actions"><button class="link-btn" type="button" data-pick>Ver</button><a class="link-btn" href="#">Editar</a></span>
+            </div>
+            <div class="list__row" data-nome="Paciente 04" data-ini="P04" data-cpf="000.000.000-00" data-nasc="dd/mm/aaaa" data-tel="(00) 00000-0000" data-email="paciente04@exemplo.com">
+              <span class="list__name">Paciente 04</span>
+              <span class="mono-sm">000.000.000-00</span>
+              <span class="mono-sm">dd/mm/aaaa</span>
+              <span class="mono-sm">(00) 00000-0000</span>
+              <span class="ellipsis">paciente04@exemplo.com</span>
+              <span class="list__actions"><button class="link-btn" type="button" data-pick>Ver</button><a class="link-btn" href="#">Editar</a></span>
+            </div>
+            <div class="list__row" data-nome="Paciente 05" data-ini="P05" data-cpf="000.000.000-00" data-nasc="dd/mm/aaaa" data-tel="(00) 00000-0000" data-email="paciente05@exemplo.com">
+              <span class="list__name">Paciente 05</span>
+              <span class="mono-sm">000.000.000-00</span>
+              <span class="mono-sm">dd/mm/aaaa</span>
+              <span class="mono-sm">(00) 00000-0000</span>
+              <span class="ellipsis">paciente05@exemplo.com</span>
+              <span class="list__actions"><button class="link-btn" type="button" data-pick>Ver</button><a class="link-btn" href="#">Editar</a></span>
+            </div>
+            <div class="list__row" data-nome="Paciente 06" data-ini="P06" data-cpf="000.000.000-00" data-nasc="dd/mm/aaaa" data-tel="(00) 00000-0000" data-email="paciente06@exemplo.com">
+              <span class="list__name">Paciente 06</span>
+              <span class="mono-sm">000.000.000-00</span>
+              <span class="mono-sm">dd/mm/aaaa</span>
+              <span class="mono-sm">(00) 00000-0000</span>
+              <span class="ellipsis">paciente06@exemplo.com</span>
+              <span class="list__actions"><button class="link-btn" type="button" data-pick>Ver</button><a class="link-btn" href="#">Editar</a></span>
+            </div>
+            <div class="list__row" data-nome="Paciente 07" data-ini="P07" data-cpf="000.000.000-00" data-nasc="dd/mm/aaaa" data-tel="(00) 00000-0000" data-email="paciente07@exemplo.com">
+              <span class="list__name">Paciente 07</span>
+              <span class="mono-sm">000.000.000-00</span>
+              <span class="mono-sm">dd/mm/aaaa</span>
+              <span class="mono-sm">(00) 00000-0000</span>
+              <span class="ellipsis">paciente07@exemplo.com</span>
+              <span class="list__actions"><button class="link-btn" type="button" data-pick>Ver</button><a class="link-btn" href="#">Editar</a></span>
+            </div>
+            <div class="list__row" data-nome="Paciente 08" data-ini="P08" data-cpf="000.000.000-00" data-nasc="dd/mm/aaaa" data-tel="(00) 00000-0000" data-email="paciente08@exemplo.com">
+              <span class="list__name">Paciente 08</span>
+              <span class="mono-sm">000.000.000-00</span>
+              <span class="mono-sm">dd/mm/aaaa</span>
+              <span class="mono-sm">(00) 00000-0000</span>
+              <span class="ellipsis">paciente08@exemplo.com</span>
+              <span class="list__actions"><button class="link-btn" type="button" data-pick>Ver</button><a class="link-btn" href="#">Editar</a></span>
+            </div>
+        </div></div>
+        <div class="pager">
+          <span class="muted" style="font-size:13px">Mostrando 1–8 de 000 pacientes</span>
+          <div class="pager__btns"><button class="page-btn" type="button">Anterior</button><button class="page-btn" aria-current="page" type="button">1</button><button class="page-btn" type="button">2</button><button class="page-btn" type="button">3</button><button class="page-btn" type="button">Próxima</button></div>
+        </div>
+      </section>
+
+      <aside class="patient" aria-label="Paciente selecionado">
+        <div class="patient__head">
+          <span class="avatar" aria-hidden="true" data-bind="ini">P01</span>
+          <div style="min-width:0"><h2 data-bind="nome">Paciente 01</h2><span class="mono-sm muted">CPF <span data-bind="cpf">000.000.000-00</span></span></div>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:8px">
+          <a class="btn" style="flex:1 1 auto" href="#">Editar dados</a>
+          <a class="btn btn--primary" style="flex:1 1 auto" href="#">Agendar consulta</a>
+        </div>
+
+        <div class="stack">
+          <h3 class="section-title">Dados pessoais</h3>
+          <dl class="dl">
+            <dt>Nascimento</dt><dd class="mono-sm"><span data-bind="nasc">dd/mm/aaaa</span> · 00 anos</dd>
+            <dt>Telefone</dt><dd class="mono-sm" data-bind="tel">(00) 00000-0000</dd>
+            <dt>E-mail</dt><dd style="overflow-wrap:anywhere" data-bind="email">paciente01@exemplo.com</dd>
+            <dt>Endereço</dt><dd>Logradouro, nº — Bairro, Cidade/UF · CEP 00000-000</dd>
+          </dl>
+        </div>
+
+        <div class="stack">
+          <h3 class="section-title">Histórico médico</h3>
+          <div role="group" aria-label="Filtrar histórico" style="display:flex; flex-wrap:wrap; gap:6px">
+            <button class="chip" type="button" data-tab="todos" aria-pressed="true">Todos (04)</button><button class="chip" type="button" data-tab="consulta" aria-pressed="false">Consultas (02)</button><button class="chip" type="button" data-tab="internacao" aria-pressed="false">Internações (02)</button>
+          </div>
+          <ol class="timeline">
+            <li class="event" data-tipo="consulta">
+              <div class="event__top"><span class="badge badge--consulta">Consulta</span><span class="mono-xs muted">dd/mm/aaaa · 09:00</span></div>
+              <span class="event__title">Motivo da consulta</span>
+              <span class="muted" style="font-size:13px">Profissional 01 · Cardiologia</span>
+              <span class="event__obs">Observações médicas registradas no atendimento.</span>
+            </li>
+            <li class="event" data-tipo="internacao">
+              <div class="event__top"><span class="badge badge--internacao">Internação</span><span class="mono-xs muted">dd/mm/aaaa → dd/mm/aaaa</span></div>
+              <span class="event__title">Quarto 104 · 1º andar</span>
+              <span class="muted" style="font-size:13px">Responsável: Profissional 02</span>
+              <span class="event__obs">Observações da internação e da alta.</span>
+            </li>
+            <li class="event" data-tipo="consulta">
+              <div class="event__top"><span class="badge badge--consulta">Consulta</span><span class="mono-xs muted">dd/mm/aaaa · 14:30</span></div>
+              <span class="event__title">Motivo da consulta</span>
+              <span class="muted" style="font-size:13px">Profissional 03 · Clínica geral</span>
+              <span class="event__obs">Observações médicas registradas no atendimento.</span>
+            </li>
+            <li class="event" data-tipo="internacao">
+              <div class="event__top"><span class="badge badge--internacao">Internação</span><span class="mono-xs muted">dd/mm/aaaa → dd/mm/aaaa</span></div>
+              <span class="event__title">Quarto 202 · 2º andar</span>
+              <span class="muted" style="font-size:13px">Responsável: Profissional 01</span>
+              <span class="event__obs">Observações da internação e da alta.</span>
+            </li>
+          </ol>
+          <a href="#" style="display:inline-flex; align-items:center; min-height:44px; font-size:14px; font-weight:500">Ver histórico completo</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+</div>
+</body>
+</html>
