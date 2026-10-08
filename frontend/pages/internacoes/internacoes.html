@@ -1,0 +1,385 @@
+<link rel="stylesheet" href="./pages/internacoes/internacoes.css" />
+
+<section class="int-pagina">
+
+    <header class="int-cabecalho">
+        <div class="int-cabecalho__texto">
+            <nav class="int-trilha" aria-label="Trilha de navegação">
+                <a href="#dashboard">Início</a> › Internações
+            </nav>
+            <h1 class="int-titulo">Internações</h1>
+            <p class="int-subtitulo">Controle de internações, ocupação de leitos e altas</p>
+        </div>
+        <button type="button" class="int-botao int-botao--primario" data-modal-alvo="modal-nova-internacao">
+            + Nova internação
+        </button>
+    </header>
+
+    <ul class="int-resumo" aria-label="Resumo das internações">
+        <li class="int-card int-indicador">
+            <span class="int-indicador__rotulo">Internações ativas</span>
+            <strong class="int-indicador__valor">00</strong>
+        </li>
+        <li class="int-card int-indicador">
+            <span class="int-indicador__rotulo">Altas previstas para hoje</span>
+            <strong class="int-indicador__valor">00</strong>
+        </li>
+        <li class="int-card int-indicador">
+            <span class="int-indicador__rotulo">Leitos livres</span>
+            <strong class="int-indicador__valor">00 <span class="int-indicador__total">de 00</span></strong>
+        </li>
+    </ul>
+
+    <section class="int-card int-filtros" role="search" aria-label="Filtros de internações">
+        <fieldset class="int-situacao">
+            <legend class="int-sr-only">Situação da internação</legend>
+            <div class="int-situacao__opcoes">
+                <label class="int-opcao">
+                    <input type="radio" name="int-situacao" value="ativas" checked />
+                    <span>Ativas (00)</span>
+                </label>
+                <label class="int-opcao">
+                    <input type="radio" name="int-situacao" value="encerradas" />
+                    <span>Encerradas (00)</span>
+                </label>
+                <label class="int-opcao">
+                    <input type="radio" name="int-situacao" value="todas" />
+                    <span>Todas</span>
+                </label>
+            </div>
+        </fieldset>
+
+        <div class="int-filtros__campos">
+            <div class="int-campo int-campo--busca">
+                <label for="int-filtro-paciente">Paciente</label>
+                <input type="search" id="int-filtro-paciente" placeholder="Nome ou CPF" />
+            </div>
+
+            <div class="int-campo">
+                <label for="int-filtro-andar">Andar / quarto</label>
+                <select id="int-filtro-andar">
+                    <option value="">Todos</option>
+                    <option>1º andar</option>
+                    <option>2º andar</option>
+                    <option>3º andar</option>
+                </select>
+            </div>
+
+            <div class="int-campo">
+                <label for="int-filtro-responsavel">Profissional responsável</label>
+                <select id="int-filtro-responsavel">
+                    <option value="">Todos</option>
+                    <option>Profissional 01</option>
+                    <option>Profissional 02</option>
+                </select>
+            </div>
+
+            <div class="int-campo">
+                <label for="int-filtro-entrada">Entrada a partir de</label>
+                <input type="date" id="int-filtro-entrada" />
+            </div>
+        </div>
+    </section>
+
+    <section class="int-card int-lista" aria-label="Lista de internações">
+        <div class="int-tabela-wrapper" role="region" aria-label="Tabela de internações" tabindex="0">
+            <table class="int-tabela">
+                <thead>
+                    <tr>
+                        <th scope="col">Paciente</th>
+                        <th scope="col">Responsável</th>
+                        <th scope="col">Quarto</th>
+                        <th scope="col">Entrada</th>
+                        <th scope="col">Alta prev.</th>
+                        <th scope="col">Alta efetiva</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="int-tabela__nome">Paciente 01</td>
+                        <td>Profissional 02</td>
+                        <td>104 · 1º andar</td>
+                        <td class="int-mono">dd/mm/aa</td>
+                        <td class="int-mono">dd/mm/aa</td>
+                        <td class="int-mono int-tabela__vazio">—</td>
+                        <td><span class="int-selo int-selo--hoje">Alta prevista hoje</span></td>
+                        <td class="int-tabela__acoes">
+                            <button type="button" class="int-link">Ver</button>
+                            <button type="button" class="int-link" data-modal-alvo="modal-registrar-alta">Registrar alta</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="int-tabela__nome">Paciente 02</td>
+                        <td>Profissional 01</td>
+                        <td>202 · 2º andar</td>
+                        <td class="int-mono">dd/mm/aa</td>
+                        <td class="int-mono">dd/mm/aa</td>
+                        <td class="int-mono int-tabela__vazio">—</td>
+                        <td><span class="int-selo int-selo--ativa">Ativa</span></td>
+                        <td class="int-tabela__acoes">
+                            <button type="button" class="int-link">Ver</button>
+                            <button type="button" class="int-link" data-modal-alvo="modal-registrar-alta">Registrar alta</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="int-tabela__nome">Paciente 03</td>
+                        <td>Profissional 04</td>
+                        <td>202 · 2º andar</td>
+                        <td class="int-mono">dd/mm/aa</td>
+                        <td class="int-mono">dd/mm/aa</td>
+                        <td class="int-mono int-tabela__vazio">—</td>
+                        <td><span class="int-selo int-selo--ativa">Ativa</span></td>
+                        <td class="int-tabela__acoes">
+                            <button type="button" class="int-link">Ver</button>
+                            <button type="button" class="int-link" data-modal-alvo="modal-registrar-alta">Registrar alta</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="int-tabela__nome">Paciente 04</td>
+                        <td>Profissional 02</td>
+                        <td>301 · 3º andar</td>
+                        <td class="int-mono">dd/mm/aa</td>
+                        <td class="int-mono">dd/mm/aa</td>
+                        <td class="int-mono int-tabela__vazio">—</td>
+                        <td><span class="int-selo int-selo--hoje">Alta prevista hoje</span></td>
+                        <td class="int-tabela__acoes">
+                            <button type="button" class="int-link">Ver</button>
+                            <button type="button" class="int-link" data-modal-alvo="modal-registrar-alta">Registrar alta</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="int-tabela__nome">Paciente 05</td>
+                        <td>Profissional 03</td>
+                        <td>103 · 1º andar</td>
+                        <td class="int-mono">dd/mm/aa</td>
+                        <td class="int-mono">dd/mm/aa</td>
+                        <td class="int-mono int-tabela__vazio">—</td>
+                        <td><span class="int-selo int-selo--ativa">Ativa</span></td>
+                        <td class="int-tabela__acoes">
+                            <button type="button" class="int-link">Ver</button>
+                            <button type="button" class="int-link" data-modal-alvo="modal-registrar-alta">Registrar alta</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="int-tabela__nome">Paciente 06</td>
+                        <td>Profissional 01</td>
+                        <td>201 · 2º andar</td>
+                        <td class="int-mono">dd/mm/aa</td>
+                        <td class="int-mono">dd/mm/aa</td>
+                        <td class="int-mono">dd/mm/aa</td>
+                        <td><span class="int-selo int-selo--encerrada">Alta concedida</span></td>
+                        <td class="int-tabela__acoes">
+                            <button type="button" class="int-link">Ver</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="int-tabela__nome">Paciente 07</td>
+                        <td>Profissional 04</td>
+                        <td>304 · 3º andar</td>
+                        <td class="int-mono">dd/mm/aa</td>
+                        <td class="int-mono">dd/mm/aa</td>
+                        <td class="int-mono">dd/mm/aa</td>
+                        <td><span class="int-selo int-selo--encerrada">Alta concedida</span></td>
+                        <td class="int-tabela__acoes">
+                            <button type="button" class="int-link">Ver</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="int-tabela__nome">Paciente 08</td>
+                        <td>Profissional 02</td>
+                        <td>105 · 1º andar</td>
+                        <td class="int-mono">dd/mm/aa</td>
+                        <td class="int-mono">dd/mm/aa</td>
+                        <td class="int-mono">dd/mm/aa</td>
+                        <td><span class="int-selo int-selo--encerrada">Alta concedida</span></td>
+                        <td class="int-tabela__acoes">
+                            <button type="button" class="int-link">Ver</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <nav class="int-paginacao" aria-label="Paginação da lista de internações">
+            <span class="int-paginacao__resumo">Mostrando 1–8 de 000 internações</span>
+            <div class="int-paginacao__botoes">
+                <button type="button" class="int-pagina-botao" disabled>Anterior</button>
+                <button type="button" class="int-pagina-botao int-pagina-botao--atual" aria-current="page">1</button>
+                <button type="button" class="int-pagina-botao">2</button>
+                <button type="button" class="int-pagina-botao">Próxima</button>
+            </div>
+        </nav>
+    </section>
+
+    <dialog class="int-modal" id="modal-nova-internacao" aria-labelledby="modal-nova-internacao-titulo">
+        <form class="int-modal__form" novalidate>
+
+            <header class="int-modal__cabecalho">
+                <div>
+                    <h2 id="modal-nova-internacao-titulo" class="int-modal__titulo">Nova internação</h2>
+                    <p class="int-subtitulo">Campos marcados com <span class="int-obrigatorio" aria-hidden="true">*</span> são obrigatórios.</p>
+                </div>
+                <button type="button" class="int-botao int-botao--icone" aria-label="Fechar" data-fechar-modal>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+                </button>
+            </header>
+
+            <div class="int-modal__corpo">
+                <div class="int-alerta" role="alert" hidden>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9.5 17h-19z"></path><path d="M12 10v4M12 17.5v.01"></path></svg>
+                    <span><strong>Quarto sem vaga.</strong> O quarto 203 atingiu a capacidade máxima (2/2). Selecione outro quarto.</span>
+                </div>
+
+                <div class="int-campo int-campo--largo">
+                    <label for="int-paciente">Paciente <span class="int-obrigatorio" aria-hidden="true">*</span></label>
+                    <input type="search" id="int-paciente" name="paciente" placeholder="Buscar por nome ou CPF" required />
+                </div>
+
+                <div class="int-campo int-campo--largo">
+                    <label for="int-profissional">Profissional responsável <span class="int-obrigatorio" aria-hidden="true">*</span></label>
+                    <select id="int-profissional" name="profissional" required>
+                        <option value="">Selecione…</option>
+                        <option>Profissional 01 — Cardiologia</option>
+                        <option>Profissional 02 — Clínica geral</option>
+                    </select>
+                </div>
+
+                <fieldset class="int-quartos int-campo--largo">
+                    <legend>Quarto <span class="int-obrigatorio" aria-hidden="true">*</span></legend>
+                    <div class="int-quartos__lista">
+                        <label class="int-quarto">
+                            <input type="radio" name="quarto" value="101" />
+                            <span class="int-quarto__conteudo">
+                                <span class="int-quarto__titulo">Quarto 101 · 1º andar</span>
+                                <span class="int-leitos" aria-hidden="true">
+                                    <span class="int-leito int-leito--ocupado"></span>
+                                    <span class="int-leito int-leito--livre"></span>
+                                </span>
+                                <span class="int-quarto__texto">1 de 2 leitos ocupados · 1 livre</span>
+                            </span>
+                        </label>
+
+                        <label class="int-quarto">
+                            <input type="radio" name="quarto" value="104" checked />
+                            <span class="int-quarto__conteudo">
+                                <span class="int-quarto__titulo">Quarto 104 · 1º andar</span>
+                                <span class="int-leitos" aria-hidden="true">
+                                    <span class="int-leito int-leito--ocupado"></span>
+                                    <span class="int-leito int-leito--ocupado"></span>
+                                    <span class="int-leito int-leito--livre"></span>
+                                    <span class="int-leito int-leito--livre"></span>
+                                </span>
+                                <span class="int-quarto__texto">2 de 4 leitos ocupados · 2 livres</span>
+                            </span>
+                        </label>
+
+                        <label class="int-quarto">
+                            <input type="radio" name="quarto" value="201" />
+                            <span class="int-quarto__conteudo">
+                                <span class="int-quarto__titulo">Quarto 201 · 2º andar</span>
+                                <span class="int-leitos" aria-hidden="true">
+                                    <span class="int-leito int-leito--livre"></span>
+                                    <span class="int-leito int-leito--livre"></span>
+                                </span>
+                                <span class="int-quarto__texto">0 de 2 leitos ocupados · 2 livres</span>
+                            </span>
+                        </label>
+
+                        <label class="int-quarto">
+                            <input type="radio" name="quarto" value="203" disabled />
+                            <span class="int-quarto__conteudo">
+                                <span class="int-quarto__titulo">
+                                    Quarto 203 · 2º andar
+                                    <span class="int-selo int-selo--lotado">Lotado</span>
+                                </span>
+                                <span class="int-leitos" aria-hidden="true">
+                                    <span class="int-leito int-leito--ocupado"></span>
+                                    <span class="int-leito int-leito--ocupado"></span>
+                                </span>
+                                <span class="int-quarto__texto">2 de 2 leitos ocupados</span>
+                            </span>
+                        </label>
+                    </div>
+                    <span class="int-campo__dica">Quartos que atingiram a capacidade máxima não podem ser selecionados.</span>
+                </fieldset>
+
+                <div class="int-campo">
+                    <label for="int-entrada">Data de entrada <span class="int-obrigatorio" aria-hidden="true">*</span></label>
+                    <input type="date" id="int-entrada" name="entrada" required />
+                </div>
+
+                <div class="int-campo">
+                    <label for="int-alta-prevista">Data prevista de alta <span class="int-obrigatorio" aria-hidden="true">*</span></label>
+                    <input type="date" id="int-alta-prevista" name="alta_prevista" required />
+                </div>
+
+                <div class="int-campo int-campo--largo">
+                    <label for="int-observacoes">Observações</label>
+                    <textarea id="int-observacoes" name="observacoes" rows="4" placeholder="Informações relevantes sobre a internação"></textarea>
+                    <span class="int-campo__dica">A data efetiva de alta é registrada depois, em “Registrar alta”.</span>
+                </div>
+            </div>
+
+            <footer class="int-modal__rodape">
+                <button type="button" class="int-botao int-botao--secundario" data-fechar-modal>Cancelar</button>
+                <button type="button" class="int-botao int-botao--primario">Registrar internação</button>
+            </footer>
+
+        </form>
+    </dialog>
+
+    <dialog class="int-modal int-modal--estreito" id="modal-registrar-alta" aria-labelledby="modal-registrar-alta-titulo">
+        <form class="int-modal__form" novalidate>
+
+            <header class="int-modal__cabecalho">
+                <div>
+                    <h2 id="modal-registrar-alta-titulo" class="int-modal__titulo">Registrar alta</h2>
+                    <p class="int-subtitulo">Encerra a internação e libera o leito.</p>
+                </div>
+                <button type="button" class="int-botao int-botao--icone" aria-label="Fechar" data-fechar-modal>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+                </button>
+            </header>
+
+            <div class="int-modal__corpo int-modal__corpo--coluna">
+                <dl class="int-resumo-alta">
+                    <dt>Paciente</dt>
+                    <dd class="int-resumo-alta__destaque">Paciente 01</dd>
+                    <dt>Quarto</dt>
+                    <dd>104 · 1º andar</dd>
+                    <dt>Responsável</dt>
+                    <dd>Profissional 02</dd>
+                    <dt>Entrada</dt>
+                    <dd class="int-mono">dd/mm/aaaa</dd>
+                    <dt>Alta prevista</dt>
+                    <dd class="int-mono">dd/mm/aaaa</dd>
+                </dl>
+
+                <div class="int-campo">
+                    <label for="int-alta-efetiva">Data efetiva de alta <span class="int-obrigatorio" aria-hidden="true">*</span></label>
+                    <input type="date" id="int-alta-efetiva" name="alta_efetiva" required />
+                    <span class="int-campo__dica">Não pode ser anterior à data de entrada.</span>
+                </div>
+
+                <div class="int-campo">
+                    <label for="int-alta-observacoes">Observações da alta</label>
+                    <textarea id="int-alta-observacoes" name="observacoes_alta" rows="4" placeholder="Condições de saída, orientações, encaminhamentos"></textarea>
+                </div>
+
+                <div class="int-aviso">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8v.01"></path></svg>
+                    <span>Ao confirmar, um leito do quarto 104 é liberado e a internação passa a constar no histórico médico do paciente.</span>
+                </div>
+            </div>
+
+            <footer class="int-modal__rodape">
+                <button type="button" class="int-botao int-botao--secundario" data-fechar-modal>Cancelar</button>
+                <button type="button" class="int-botao int-botao--primario">Confirmar alta</button>
+            </footer>
+
+        </form>
+    </dialog>
+
+</section>

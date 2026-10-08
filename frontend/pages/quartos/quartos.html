@@ -1,0 +1,397 @@
+<link rel="stylesheet" href="./pages/quartos/quartos.css" />
+
+<section class="qto-pagina">
+
+    <header class="qto-cabecalho">
+        <div class="qto-cabecalho__texto">
+            <nav class="qto-trilha" aria-label="Trilha de navegação">
+                <a href="#dashboard">Início</a> › Quartos
+            </nav>
+            <h1 class="qto-titulo">Quartos</h1>
+            <p class="qto-subtitulo">Capacidade, ocupação e situação dos quartos hospitalares</p>
+        </div>
+        <button type="button" class="qto-botao qto-botao--primario" data-modal-alvo="modal-novo-quarto">
+            + Novo quarto
+        </button>
+    </header>
+
+    <ul class="qto-resumo" aria-label="Resumo dos quartos">
+        <li class="qto-card qto-indicador">
+            <span class="qto-indicador__rotulo">Total de quartos</span>
+            <strong class="qto-indicador__valor">00</strong>
+        </li>
+        <li class="qto-card qto-indicador">
+            <span class="qto-indicador__rotulo">Disponíveis</span>
+            <strong class="qto-indicador__valor">00</strong>
+        </li>
+        <li class="qto-card qto-indicador">
+            <span class="qto-indicador__rotulo">Ocupados (lotados)</span>
+            <strong class="qto-indicador__valor">00</strong>
+        </li>
+        <li class="qto-card qto-indicador">
+            <span class="qto-indicador__rotulo">Leitos livres</span>
+            <strong class="qto-indicador__valor">00 <span class="qto-indicador__total">de 00</span></strong>
+        </li>
+    </ul>
+
+    <section class="qto-card qto-filtros" role="search" aria-label="Filtros de quartos">
+        <div class="qto-campo">
+            <label for="qto-filtro-numero">Buscar quarto</label>
+            <input type="search" id="qto-filtro-numero" placeholder="Número" />
+        </div>
+
+        <div class="qto-campo">
+            <label for="qto-filtro-andar">Andar</label>
+            <select id="qto-filtro-andar">
+                <option value="">Todos</option>
+                <option>1º andar</option>
+                <option>2º andar</option>
+                <option>3º andar</option>
+            </select>
+        </div>
+
+        <fieldset class="qto-situacao">
+            <legend>Situação</legend>
+            <div class="qto-situacao__opcoes">
+                <label class="qto-opcao">
+                    <input type="radio" name="qto-situacao" value="todos" checked />
+                    <span>Todos</span>
+                </label>
+                <label class="qto-opcao">
+                    <input type="radio" name="qto-situacao" value="disponiveis" />
+                    <span>Disponíveis</span>
+                </label>
+                <label class="qto-opcao">
+                    <input type="radio" name="qto-situacao" value="ocupados" />
+                    <span>Ocupados</span>
+                </label>
+            </div>
+        </fieldset>
+    </section>
+
+    <ul class="qto-legenda" aria-label="Legenda dos leitos">
+        <li><span class="qto-leito qto-leito--ocupado" aria-hidden="true"></span>Leito ocupado</li>
+        <li><span class="qto-leito qto-leito--livre" aria-hidden="true"></span>Leito livre</li>
+    </ul>
+
+    <section class="qto-andar" aria-labelledby="qto-andar-1">
+        <div class="qto-andar__topo">
+            <h2 id="qto-andar-1" class="qto-andar__titulo">1º andar</h2>
+            <span class="qto-andar__resumo">5 quartos · 4 leitos livres</span>
+        </div>
+        <div class="qto-grade">
+            <article class="qto-card qto-quarto">
+                <div class="qto-quarto__topo">
+                    <h3 class="qto-quarto__titulo">Quarto 101</h3>
+                    <span class="qto-selo qto-selo--ocupado">Ocupado</span>
+                </div>
+                <div class="qto-leitos" aria-hidden="true">
+                    <span class="qto-leito qto-leito--ocupado"></span>
+                    <span class="qto-leito qto-leito--ocupado"></span>
+                </div>
+                <p class="qto-quarto__ocupacao"><span class="qto-mono">2 de 2</span> leitos ocupados</p>
+                <div class="qto-quarto__acoes">
+                    <button type="button" class="qto-link">Ocupantes</button>
+                    <button type="button" class="qto-link">Editar</button>
+                </div>
+            </article>
+
+            <article class="qto-card qto-quarto">
+                <div class="qto-quarto__topo">
+                    <h3 class="qto-quarto__titulo">Quarto 102</h3>
+                    <span class="qto-selo qto-selo--disponivel">Disponível</span>
+                </div>
+                <div class="qto-leitos" aria-hidden="true">
+                    <span class="qto-leito qto-leito--ocupado"></span>
+                    <span class="qto-leito qto-leito--livre"></span>
+                </div>
+                <p class="qto-quarto__ocupacao"><span class="qto-mono">1 de 2</span> leitos ocupados</p>
+                <div class="qto-quarto__acoes">
+                    <button type="button" class="qto-link">Ocupantes</button>
+                    <button type="button" class="qto-link">Editar</button>
+                </div>
+            </article>
+
+            <article class="qto-card qto-quarto">
+                <div class="qto-quarto__topo">
+                    <h3 class="qto-quarto__titulo">Quarto 103</h3>
+                    <span class="qto-selo qto-selo--ocupado">Ocupado</span>
+                </div>
+                <div class="qto-leitos" aria-hidden="true">
+                    <span class="qto-leito qto-leito--ocupado"></span>
+                    <span class="qto-leito qto-leito--ocupado"></span>
+                    <span class="qto-leito qto-leito--ocupado"></span>
+                    <span class="qto-leito qto-leito--ocupado"></span>
+                </div>
+                <p class="qto-quarto__ocupacao"><span class="qto-mono">4 de 4</span> leitos ocupados</p>
+                <div class="qto-quarto__acoes">
+                    <button type="button" class="qto-link">Ocupantes</button>
+                    <button type="button" class="qto-link">Editar</button>
+                </div>
+            </article>
+
+            <article class="qto-card qto-quarto">
+                <div class="qto-quarto__topo">
+                    <h3 class="qto-quarto__titulo">Quarto 104</h3>
+                    <span class="qto-selo qto-selo--disponivel">Disponível</span>
+                </div>
+                <div class="qto-leitos" aria-hidden="true">
+                    <span class="qto-leito qto-leito--ocupado"></span>
+                    <span class="qto-leito qto-leito--ocupado"></span>
+                    <span class="qto-leito qto-leito--livre"></span>
+                    <span class="qto-leito qto-leito--livre"></span>
+                </div>
+                <p class="qto-quarto__ocupacao"><span class="qto-mono">2 de 4</span> leitos ocupados</p>
+                <div class="qto-quarto__acoes">
+                    <button type="button" class="qto-link">Ocupantes</button>
+                    <button type="button" class="qto-link">Editar</button>
+                </div>
+            </article>
+
+            <article class="qto-card qto-quarto">
+                <div class="qto-quarto__topo">
+                    <h3 class="qto-quarto__titulo">Quarto 105</h3>
+                    <span class="qto-selo qto-selo--disponivel">Disponível</span>
+                </div>
+                <div class="qto-leitos" aria-hidden="true">
+                    <span class="qto-leito qto-leito--livre"></span>
+                </div>
+                <p class="qto-quarto__ocupacao"><span class="qto-mono">0 de 1</span> leitos ocupados</p>
+                <div class="qto-quarto__acoes">
+                    <button type="button" class="qto-link">Ocupantes</button>
+                    <button type="button" class="qto-link">Editar</button>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="qto-andar" aria-labelledby="qto-andar-2">
+        <div class="qto-andar__topo">
+            <h2 id="qto-andar-2" class="qto-andar__titulo">2º andar</h2>
+            <span class="qto-andar__resumo">5 quartos · 3 leitos livres</span>
+        </div>
+        <div class="qto-grade">
+            <article class="qto-card qto-quarto">
+                <div class="qto-quarto__topo">
+                    <h3 class="qto-quarto__titulo">Quarto 201</h3>
+                    <span class="qto-selo qto-selo--disponivel">Disponível</span>
+                </div>
+                <div class="qto-leitos" aria-hidden="true">
+                    <span class="qto-leito qto-leito--livre"></span>
+                    <span class="qto-leito qto-leito--livre"></span>
+                </div>
+                <p class="qto-quarto__ocupacao"><span class="qto-mono">0 de 2</span> leitos ocupados</p>
+                <div class="qto-quarto__acoes">
+                    <button type="button" class="qto-link">Ocupantes</button>
+                    <button type="button" class="qto-link">Editar</button>
+                </div>
+            </article>
+
+            <article class="qto-card qto-quarto">
+                <div class="qto-quarto__topo">
+                    <h3 class="qto-quarto__titulo">Quarto 202</h3>
+                    <span class="qto-selo qto-selo--ocupado">Ocupado</span>
+                </div>
+                <div class="qto-leitos" aria-hidden="true">
+                    <span class="qto-leito qto-leito--ocupado"></span>
+                    <span class="qto-leito qto-leito--ocupado"></span>
+                </div>
+                <p class="qto-quarto__ocupacao"><span class="qto-mono">2 de 2</span> leitos ocupados</p>
+                <div class="qto-quarto__acoes">
+                    <button type="button" class="qto-link">Ocupantes</button>
+                    <button type="button" class="qto-link">Editar</button>
+                </div>
+            </article>
+
+            <article class="qto-card qto-quarto">
+                <div class="qto-quarto__topo">
+                    <h3 class="qto-quarto__titulo">Quarto 203</h3>
+                    <span class="qto-selo qto-selo--ocupado">Ocupado</span>
+                </div>
+                <div class="qto-leitos" aria-hidden="true">
+                    <span class="qto-leito qto-leito--ocupado"></span>
+                    <span class="qto-leito qto-leito--ocupado"></span>
+                </div>
+                <p class="qto-quarto__ocupacao"><span class="qto-mono">2 de 2</span> leitos ocupados</p>
+                <div class="qto-quarto__acoes">
+                    <button type="button" class="qto-link">Ocupantes</button>
+                    <button type="button" class="qto-link">Editar</button>
+                </div>
+            </article>
+
+            <article class="qto-card qto-quarto">
+                <div class="qto-quarto__topo">
+                    <h3 class="qto-quarto__titulo">Quarto 204</h3>
+                    <span class="qto-selo qto-selo--disponivel">Disponível</span>
+                </div>
+                <div class="qto-leitos" aria-hidden="true">
+                    <span class="qto-leito qto-leito--ocupado"></span>
+                    <span class="qto-leito qto-leito--ocupado"></span>
+                    <span class="qto-leito qto-leito--ocupado"></span>
+                    <span class="qto-leito qto-leito--livre"></span>
+                </div>
+                <p class="qto-quarto__ocupacao"><span class="qto-mono">3 de 4</span> leitos ocupados</p>
+                <div class="qto-quarto__acoes">
+                    <button type="button" class="qto-link">Ocupantes</button>
+                    <button type="button" class="qto-link">Editar</button>
+                </div>
+            </article>
+
+            <article class="qto-card qto-quarto">
+                <div class="qto-quarto__topo">
+                    <h3 class="qto-quarto__titulo">Quarto 205</h3>
+                    <span class="qto-selo qto-selo--ocupado">Ocupado</span>
+                </div>
+                <div class="qto-leitos" aria-hidden="true">
+                    <span class="qto-leito qto-leito--ocupado"></span>
+                </div>
+                <p class="qto-quarto__ocupacao"><span class="qto-mono">1 de 1</span> leitos ocupados</p>
+                <div class="qto-quarto__acoes">
+                    <button type="button" class="qto-link">Ocupantes</button>
+                    <button type="button" class="qto-link">Editar</button>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="qto-andar" aria-labelledby="qto-andar-3">
+        <div class="qto-andar__topo">
+            <h2 id="qto-andar-3" class="qto-andar__titulo">3º andar</h2>
+            <span class="qto-andar__resumo">5 quartos · 7 leitos livres</span>
+        </div>
+        <div class="qto-grade">
+            <article class="qto-card qto-quarto">
+                <div class="qto-quarto__topo">
+                    <h3 class="qto-quarto__titulo">Quarto 301</h3>
+                    <span class="qto-selo qto-selo--disponivel">Disponível</span>
+                </div>
+                <div class="qto-leitos" aria-hidden="true">
+                    <span class="qto-leito qto-leito--ocupado"></span>
+                    <span class="qto-leito qto-leito--livre"></span>
+                    <span class="qto-leito qto-leito--livre"></span>
+                    <span class="qto-leito qto-leito--livre"></span>
+                </div>
+                <p class="qto-quarto__ocupacao"><span class="qto-mono">1 de 4</span> leitos ocupados</p>
+                <div class="qto-quarto__acoes">
+                    <button type="button" class="qto-link">Ocupantes</button>
+                    <button type="button" class="qto-link">Editar</button>
+                </div>
+            </article>
+
+            <article class="qto-card qto-quarto">
+                <div class="qto-quarto__topo">
+                    <h3 class="qto-quarto__titulo">Quarto 302</h3>
+                    <span class="qto-selo qto-selo--ocupado">Ocupado</span>
+                </div>
+                <div class="qto-leitos" aria-hidden="true">
+                    <span class="qto-leito qto-leito--ocupado"></span>
+                    <span class="qto-leito qto-leito--ocupado"></span>
+                    <span class="qto-leito qto-leito--ocupado"></span>
+                    <span class="qto-leito qto-leito--ocupado"></span>
+                </div>
+                <p class="qto-quarto__ocupacao"><span class="qto-mono">4 de 4</span> leitos ocupados</p>
+                <div class="qto-quarto__acoes">
+                    <button type="button" class="qto-link">Ocupantes</button>
+                    <button type="button" class="qto-link">Editar</button>
+                </div>
+            </article>
+
+            <article class="qto-card qto-quarto">
+                <div class="qto-quarto__topo">
+                    <h3 class="qto-quarto__titulo">Quarto 303</h3>
+                    <span class="qto-selo qto-selo--disponivel">Disponível</span>
+                </div>
+                <div class="qto-leitos" aria-hidden="true">
+                    <span class="qto-leito qto-leito--ocupado"></span>
+                    <span class="qto-leito qto-leito--livre"></span>
+                </div>
+                <p class="qto-quarto__ocupacao"><span class="qto-mono">1 de 2</span> leitos ocupados</p>
+                <div class="qto-quarto__acoes">
+                    <button type="button" class="qto-link">Ocupantes</button>
+                    <button type="button" class="qto-link">Editar</button>
+                </div>
+            </article>
+
+            <article class="qto-card qto-quarto">
+                <div class="qto-quarto__topo">
+                    <h3 class="qto-quarto__titulo">Quarto 304</h3>
+                    <span class="qto-selo qto-selo--disponivel">Disponível</span>
+                </div>
+                <div class="qto-leitos" aria-hidden="true">
+                    <span class="qto-leito qto-leito--livre"></span>
+                    <span class="qto-leito qto-leito--livre"></span>
+                </div>
+                <p class="qto-quarto__ocupacao"><span class="qto-mono">0 de 2</span> leitos ocupados</p>
+                <div class="qto-quarto__acoes">
+                    <button type="button" class="qto-link">Ocupantes</button>
+                    <button type="button" class="qto-link">Editar</button>
+                </div>
+            </article>
+
+            <article class="qto-card qto-quarto">
+                <div class="qto-quarto__topo">
+                    <h3 class="qto-quarto__titulo">Quarto 305</h3>
+                    <span class="qto-selo qto-selo--disponivel">Disponível</span>
+                </div>
+                <div class="qto-leitos" aria-hidden="true">
+                    <span class="qto-leito qto-leito--livre"></span>
+                </div>
+                <p class="qto-quarto__ocupacao"><span class="qto-mono">0 de 1</span> leitos ocupados</p>
+                <div class="qto-quarto__acoes">
+                    <button type="button" class="qto-link">Ocupantes</button>
+                    <button type="button" class="qto-link">Editar</button>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <dialog class="qto-modal" id="modal-novo-quarto" aria-labelledby="modal-novo-quarto-titulo">
+        <form class="qto-modal__form" novalidate>
+
+            <header class="qto-modal__cabecalho">
+                <div>
+                    <h2 id="modal-novo-quarto-titulo" class="qto-modal__titulo">Novo quarto</h2>
+                    <p class="qto-subtitulo">Campos marcados com <span class="qto-obrigatorio" aria-hidden="true">*</span> são obrigatórios.</p>
+                </div>
+                <button type="button" class="qto-botao qto-botao--icone" aria-label="Fechar" data-fechar-modal>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+                </button>
+            </header>
+
+            <div class="qto-modal__corpo">
+                <div class="qto-campo">
+                    <label for="qto-numero">Número de identificação <span class="qto-obrigatorio" aria-hidden="true">*</span></label>
+                    <input type="text" id="qto-numero" name="numero" class="qto-mono" placeholder="000" required />
+                    <span class="qto-campo__dica">Único no hospital</span>
+                </div>
+
+                <div class="qto-campo">
+                    <label for="qto-andar">Andar <span class="qto-obrigatorio" aria-hidden="true">*</span></label>
+                    <input type="number" id="qto-andar" name="andar" class="qto-mono" min="0" placeholder="0" required />
+                </div>
+
+                <div class="qto-campo qto-campo--largo">
+                    <label for="qto-capacidade">Capacidade máxima de pacientes <span class="qto-obrigatorio" aria-hidden="true">*</span></label>
+                    <input type="number" id="qto-capacidade" name="capacidade" class="qto-mono" min="1" placeholder="0" required />
+                    <span class="qto-campo__dica">Não pode ser menor que a ocupação atual do quarto.</span>
+                </div>
+
+                <div class="qto-campo qto-campo--largo">
+                    <span class="qto-campo__rotulo">Situação atual</span>
+                    <div class="qto-situacao-atual">
+                        <span class="qto-selo qto-selo--disponivel">Disponível</span>
+                        <span class="qto-situacao-atual__texto">0 de 0 leitos ocupados</span>
+                    </div>
+                    <span class="qto-campo__dica">Calculada automaticamente: o quarto passa a Ocupado quando atinge a capacidade máxima.</span>
+                </div>
+            </div>
+
+            <footer class="qto-modal__rodape">
+                <button type="button" class="qto-botao qto-botao--secundario" data-fechar-modal>Cancelar</button>
+                <button type="button" class="qto-botao qto-botao--primario">Salvar quarto</button>
+            </footer>
+
+        </form>
+    </dialog>
+
+</section>

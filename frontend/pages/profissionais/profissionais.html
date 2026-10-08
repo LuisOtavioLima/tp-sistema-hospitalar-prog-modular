@@ -1,0 +1,304 @@
+<link rel="stylesheet" href="./pages/profissionais/profissionais.css" />
+
+<section class="prof-pagina">
+
+    <header class="prof-cabecalho">
+        <div class="prof-cabecalho__texto">
+            <nav class="prof-trilha" aria-label="Trilha de navegação">
+                <a href="#dashboard">Início</a> › Profissionais
+            </nav>
+            <h1 class="prof-titulo">Profissionais da saúde</h1>
+            <p class="prof-subtitulo">Cadastro, especialidades e disponibilidade de atendimento</p>
+        </div>
+        <button type="button" class="prof-botao prof-botao--primario" data-modal-alvo="modal-novo-profissional">
+            + Novo profissional
+        </button>
+    </header>
+
+    <section class="prof-card prof-filtros" role="search" aria-label="Filtros de profissionais">
+        <div class="prof-campo prof-campo--busca">
+            <label for="prof-filtro-busca">Buscar profissional</label>
+            <input type="search" id="prof-filtro-busca" placeholder="Nome ou registro profissional" />
+        </div>
+
+        <div class="prof-campo">
+            <label for="prof-filtro-especialidade">Especialidade</label>
+            <select id="prof-filtro-especialidade">
+                <option value="">Todas</option>
+                <option>Cardiologia</option>
+                <option>Clínica geral</option>
+                <option>Pediatria</option>
+                <option>Ortopedia</option>
+                <option>Enfermagem</option>
+            </select>
+        </div>
+
+        <div class="prof-campo">
+            <label for="prof-filtro-data">Disponível em</label>
+            <input type="date" id="prof-filtro-data" />
+        </div>
+
+        <button type="button" class="prof-botao prof-botao--secundario">Limpar filtros</button>
+    </section>
+
+    <section class="prof-card prof-lista" aria-label="Lista de profissionais">
+        <div class="prof-tabela-wrapper" role="region" aria-label="Tabela de profissionais" tabindex="0">
+            <table class="prof-tabela">
+                <thead>
+                    <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Registro</th>
+                        <th scope="col">Especialidade</th>
+                        <th scope="col">Telefone</th>
+                        <th scope="col">E-mail</th>
+                        <th scope="col">Hoje</th>
+                        <th scope="col">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="prof-tabela__nome">Profissional 01</td>
+                        <td class="prof-mono">CRM-UF 000000</td>
+                        <td>Cardiologia</td>
+                        <td class="prof-mono">(00) 00000-0000</td>
+                        <td class="prof-tabela__email">profissional01@exemplo.com</td>
+                        <td><span class="prof-mono">00</span> consultas</td>
+                        <td class="prof-tabela__acoes">
+                            <button type="button" class="prof-link">Agenda</button>
+                            <button type="button" class="prof-link">Editar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="prof-tabela__nome">Profissional 02</td>
+                        <td class="prof-mono">CRM-UF 000000</td>
+                        <td>Clínica geral</td>
+                        <td class="prof-mono">(00) 00000-0000</td>
+                        <td class="prof-tabela__email">profissional02@exemplo.com</td>
+                        <td><span class="prof-mono">00</span> consultas</td>
+                        <td class="prof-tabela__acoes">
+                            <button type="button" class="prof-link">Agenda</button>
+                            <button type="button" class="prof-link">Editar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="prof-tabela__nome">Profissional 03</td>
+                        <td class="prof-mono">CRM-UF 000000</td>
+                        <td>Pediatria</td>
+                        <td class="prof-mono">(00) 00000-0000</td>
+                        <td class="prof-tabela__email">profissional03@exemplo.com</td>
+                        <td><span class="prof-mono">00</span> consultas</td>
+                        <td class="prof-tabela__acoes">
+                            <button type="button" class="prof-link">Agenda</button>
+                            <button type="button" class="prof-link">Editar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="prof-tabela__nome">Profissional 04</td>
+                        <td class="prof-mono">CRM-UF 000000</td>
+                        <td>Ortopedia</td>
+                        <td class="prof-mono">(00) 00000-0000</td>
+                        <td class="prof-tabela__email">profissional04@exemplo.com</td>
+                        <td><span class="prof-mono">00</span> consultas</td>
+                        <td class="prof-tabela__acoes">
+                            <button type="button" class="prof-link">Agenda</button>
+                            <button type="button" class="prof-link">Editar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="prof-tabela__nome">Profissional 05</td>
+                        <td class="prof-mono">COREN-UF 000000</td>
+                        <td>Enfermagem</td>
+                        <td class="prof-mono">(00) 00000-0000</td>
+                        <td class="prof-tabela__email">profissional05@exemplo.com</td>
+                        <td><span class="prof-mono">00</span> consultas</td>
+                        <td class="prof-tabela__acoes">
+                            <button type="button" class="prof-link">Agenda</button>
+                            <button type="button" class="prof-link">Editar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="prof-tabela__nome">Profissional 06</td>
+                        <td class="prof-mono">CRM-UF 000000</td>
+                        <td>Clínica geral</td>
+                        <td class="prof-mono">(00) 00000-0000</td>
+                        <td class="prof-tabela__email">profissional06@exemplo.com</td>
+                        <td><span class="prof-mono">00</span> consultas</td>
+                        <td class="prof-tabela__acoes">
+                            <button type="button" class="prof-link">Agenda</button>
+                            <button type="button" class="prof-link">Editar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <nav class="prof-paginacao" aria-label="Paginação da lista de profissionais">
+            <span class="prof-paginacao__resumo">Mostrando 1–6 de 000 profissionais</span>
+            <div class="prof-paginacao__botoes">
+                <button type="button" class="prof-pagina-botao" disabled>Anterior</button>
+                <button type="button" class="prof-pagina-botao prof-pagina-botao--atual" aria-current="page">1</button>
+                <button type="button" class="prof-pagina-botao">2</button>
+                <button type="button" class="prof-pagina-botao">3</button>
+                <button type="button" class="prof-pagina-botao">Próxima</button>
+            </div>
+        </nav>
+    </section>
+
+    <section class="prof-card prof-disponibilidade" aria-labelledby="prof-disp-titulo">
+        <div class="prof-disponibilidade__topo">
+            <div>
+                <h2 id="prof-disp-titulo" class="prof-secao-titulo">Disponibilidade semanal</h2>
+                <p class="prof-subtitulo">
+                    Profissional 01 · Cardiologia · <span class="prof-mono">CRM-UF 000000</span>
+                </p>
+            </div>
+
+            <div class="prof-semana">
+                <button type="button" class="prof-botao prof-botao--icone" aria-label="Semana anterior">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"></path></svg>
+                </button>
+                <span class="prof-mono prof-semana__intervalo">dd/mm – dd/mm/aaaa</span>
+                <button type="button" class="prof-botao prof-botao--icone" aria-label="Próxima semana">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+                </button>
+                <button type="button" class="prof-botao prof-botao--secundario">Editar disponibilidade</button>
+            </div>
+        </div>
+
+        <ul class="prof-legenda" aria-label="Legenda da grade">
+            <li><span class="prof-legenda__amostra prof-slot--livre" aria-hidden="true"></span>Livre</li>
+            <li><span class="prof-legenda__amostra prof-slot--consulta" aria-hidden="true"></span>Consulta agendada</li>
+            <li><span class="prof-legenda__amostra prof-slot--fora" aria-hidden="true"></span>Fora do expediente</li>
+        </ul>
+
+        <div class="prof-tabela-wrapper" role="region" aria-label="Grade de disponibilidade da semana" tabindex="0">
+            <table class="prof-grade">
+                <thead>
+                    <tr>
+                        <td></td>
+                        <th scope="col">Seg dd/mm</th>
+                        <th scope="col">Ter dd/mm</th>
+                        <th scope="col">Qua dd/mm</th>
+                        <th scope="col">Qui dd/mm</th>
+                        <th scope="col">Sex dd/mm</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">08:00</th>
+                        <td class="prof-slot prof-slot--consulta">Consulta</td>
+                        <td class="prof-slot prof-slot--livre">Livre</td>
+                        <td class="prof-slot prof-slot--consulta">Consulta</td>
+                        <td class="prof-slot prof-slot--livre">Livre</td>
+                        <td class="prof-slot prof-slot--fora">Fora</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">09:00</th>
+                        <td class="prof-slot prof-slot--consulta">Consulta</td>
+                        <td class="prof-slot prof-slot--consulta">Consulta</td>
+                        <td class="prof-slot prof-slot--livre">Livre</td>
+                        <td class="prof-slot prof-slot--livre">Livre</td>
+                        <td class="prof-slot prof-slot--fora">Fora</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">10:00</th>
+                        <td class="prof-slot prof-slot--livre">Livre</td>
+                        <td class="prof-slot prof-slot--consulta">Consulta</td>
+                        <td class="prof-slot prof-slot--consulta">Consulta</td>
+                        <td class="prof-slot prof-slot--livre">Livre</td>
+                        <td class="prof-slot prof-slot--fora">Fora</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">11:00</th>
+                        <td class="prof-slot prof-slot--livre">Livre</td>
+                        <td class="prof-slot prof-slot--livre">Livre</td>
+                        <td class="prof-slot prof-slot--consulta">Consulta</td>
+                        <td class="prof-slot prof-slot--consulta">Consulta</td>
+                        <td class="prof-slot prof-slot--fora">Fora</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">14:00</th>
+                        <td class="prof-slot prof-slot--fora">Fora</td>
+                        <td class="prof-slot prof-slot--livre">Livre</td>
+                        <td class="prof-slot prof-slot--livre">Livre</td>
+                        <td class="prof-slot prof-slot--consulta">Consulta</td>
+                        <td class="prof-slot prof-slot--livre">Livre</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">15:00</th>
+                        <td class="prof-slot prof-slot--fora">Fora</td>
+                        <td class="prof-slot prof-slot--consulta">Consulta</td>
+                        <td class="prof-slot prof-slot--livre">Livre</td>
+                        <td class="prof-slot prof-slot--livre">Livre</td>
+                        <td class="prof-slot prof-slot--consulta">Consulta</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">16:00</th>
+                        <td class="prof-slot prof-slot--fora">Fora</td>
+                        <td class="prof-slot prof-slot--livre">Livre</td>
+                        <td class="prof-slot prof-slot--consulta">Consulta</td>
+                        <td class="prof-slot prof-slot--livre">Livre</td>
+                        <td class="prof-slot prof-slot--livre">Livre</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <dialog class="prof-modal" id="modal-novo-profissional" aria-labelledby="modal-novo-profissional-titulo">
+        <form class="prof-modal__form" novalidate>
+
+            <header class="prof-modal__cabecalho">
+                <div>
+                    <h2 id="modal-novo-profissional-titulo" class="prof-modal__titulo">Novo profissional da saúde</h2>
+                    <p class="prof-subtitulo">Campos marcados com <span class="prof-obrigatorio" aria-hidden="true">*</span> são obrigatórios.</p>
+                </div>
+                <button type="button" class="prof-botao prof-botao--icone" aria-label="Fechar" data-fechar-modal>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+                </button>
+            </header>
+
+            <div class="prof-modal__corpo">
+                <div class="prof-campo prof-campo--largo">
+                    <label for="prof-nome">Nome completo <span class="prof-obrigatorio" aria-hidden="true">*</span></label>
+                    <input type="text" id="prof-nome" name="nome" placeholder="Nome do profissional" required />
+                </div>
+
+                <div class="prof-campo">
+                    <label for="prof-registro">Registro profissional <span class="prof-obrigatorio" aria-hidden="true">*</span></label>
+                    <input type="text" id="prof-registro" name="registro" placeholder="CRM-UF 000000" required />
+                    <span class="prof-campo__dica">CRM, COREN ou equivalente · único</span>
+                </div>
+
+                <div class="prof-campo">
+                    <label for="prof-especialidade">Especialidade <span class="prof-obrigatorio" aria-hidden="true">*</span></label>
+                    <select id="prof-especialidade" name="especialidade" required>
+                        <option value="">Selecione…</option>
+                        <option>Cardiologia</option>
+                        <option>Clínica geral</option>
+                        <option>Pediatria</option>
+                        <option>Ortopedia</option>
+                        <option>Enfermagem</option>
+                    </select>
+                </div>
+
+                <div class="prof-campo">
+                    <label for="prof-telefone">Telefone <span class="prof-obrigatorio" aria-hidden="true">*</span></label>
+                    <input type="tel" id="prof-telefone" name="telefone" placeholder="(00) 00000-0000" required />
+                </div>
+
+                <div class="prof-campo">
+                    <label for="prof-email">E-mail para contato <span class="prof-obrigatorio" aria-hidden="true">*</span></label>
+                    <input type="email" id="prof-email" name="email" placeholder="nome@exemplo.com" required />
+                </div>
+            </div>
+
+            <footer class="prof-modal__rodape">
+                <button type="button" class="prof-botao prof-botao--secundario" data-fechar-modal>Cancelar</button>
+                <button type="button" class="prof-botao prof-botao--primario">Salvar profissional</button>
+            </footer>
+
+        </form>
+    </dialog>
+
+</section>
