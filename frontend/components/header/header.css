@@ -1,42 +1,101 @@
 .main-header {
     background-color: var(--cor-fundo-secundaria);
+    padding: 16px 32px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--cor-secundaria);
+}
+
+.header-left, .header-right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.svg-icon img {
+    width: 20px;
+    height: 20px;
+}
+
+.svg-icon {
+    background-color: var(--cor-fundo-secundaria);
+    border: 1px solid var(--cor-secundaria);
+    border-radius: 8px;
+    padding: 8px;
+    cursor: pointer;  
+}
+
+.search-icon {
+    background-color: var(--cor-fundo);
+    border: none;
+    cursor: default;
+    padding: 0;
+}
+
+.logo h2 {
+    font-size: 16px;
+    color: var(--cor-texto);
+    margin: 0;
+}
+
+.logo span {
+    font-size: 12px;
+    color: #64748B;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: var(--cor-fundo);
+    border: 1px solid var(--cor-secundaria);
+    border-radius: 8px;
+    padding: 8px 16px;
+    width: 400px;
+}
+
+.search-bar input {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+    margin-left: 8px;
     color: var(--cor-texto);
     font-family: var(--fonte-padrao);
-    margin: 0;
-    padding: 64px 32px;
-    border-bottom: 1px solid var(--cor-fundo-secundaria);
-    box-shadow: 0 1px 8px rgb(15 23 42 / 0.05);
+}
 
+.user-profile {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
     align-items: center;
+    gap: 6px;
+    border: 1px solid var(--cor-secundaria);
+    border-radius: 24px; 
+    padding: 4px 8px 4px 4px;   
+    font-size: 11px;
 }
 
-.main-nav {
+.user-info {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1rem;
+    flex-direction: column;
 }
 
-.main-nav a {
-    padding: 0.6rem 0.6rem;
-    text-decoration: none;
-    font-weight: bold;
-    border: solid 3px var(--cor-secundaria);
-    border-radius: 999px;
-    transition: color 0.2s ease,
-                background-color 0.2s ease;
+.user-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--cor-texto);
 }
 
-.main-nav a:hover {
-    background-color: var(--cor-secundaria);
-    color: var(--cor-fundo);
+.user-role {
+    font-size: 12px;
+    color: #64748B;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+.user-avatar img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%; /* 50% de ?*/
+    padding: 4px;
+    background-color: var(--cor-fundo);
+    cursor: pointer;
 }
