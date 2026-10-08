@@ -1,0 +1,224 @@
+<div class="consultas-container">
+
+    <!-- cabeçalho da página -->
+    <header class="consultas-cabecalho">
+        <div class="consultas-titulo">
+            <nav class="consultas-breadcrumb">
+                <a href="#dashboard">Início</a> › Consultas
+            </nav>
+            <h1>Consultas</h1>
+            <span class="consultas-subtitulo">Agendamento e controle de consultas</span>
+        </div>
+        <button class="consultas-btn consultas-btn-primario">+ Agendar consulta</button>
+    </header>
+
+    <!-- filtros -->
+    <section class="consultas-card consultas-filtros">
+        <label class="consultas-campo">
+            Data
+            <input type="date" />
+        </label>
+        <label class="consultas-campo">
+            Profissional
+            <select>
+                <option>Todos</option>
+                <option>Profissional 01</option>
+                <option>Profissional 02</option>
+                <option>Profissional 03</option>
+                <option>Profissional 04</option>
+            </select>
+        </label>
+        <label class="consultas-campo consultas-campo-largo">
+            Paciente
+            <input type="text" placeholder="Nome ou CPF" />
+        </label>
+        <label class="consultas-campo">
+            Status
+            <select>
+                <option>Todos</option>
+                <option>Agendada</option>
+                <option>Em atendimento</option>
+                <option>Realizada</option>
+                <option>Cancelada</option>
+            </select>
+        </label>
+        <button class="consultas-btn consultas-btn-contorno">Limpar</button>
+    </section>
+
+    <!-- agenda do dia: uma coluna por profissional, uma linha por horário -->
+    <section class="consultas-card">
+        <div class="consultas-card-cabecalho">
+            <div>
+                <h3>Agenda do dia</h3>
+                <span class="consultas-mono consultas-suave">dd/mm/aaaa · por profissional</span>
+            </div>
+            <div class="consultas-navegacao-dia">
+                <button class="consultas-btn consultas-btn-contorno consultas-btn-icone" aria-label="Dia anterior">‹</button>
+                <button class="consultas-btn consultas-btn-contorno">Hoje</button>
+                <button class="consultas-btn consultas-btn-contorno consultas-btn-icone" aria-label="Próximo dia">›</button>
+            </div>
+        </div>
+
+        <div class="consultas-legenda">
+            <span><i class="consultas-legenda-cor agendada"></i>Agendada</span>
+            <span><i class="consultas-legenda-cor atendimento"></i>Em atendimento</span>
+            <span><i class="consultas-legenda-cor realizada"></i>Realizada</span>
+            <span><i class="consultas-legenda-cor livre"></i>Horário livre</span>
+        </div>
+
+        <div class="consultas-agenda">
+            <!-- cabeçalho das colunas -->
+            <div></div>
+            <div class="consultas-agenda-profissional"><strong>Profissional 01</strong><span>Cardiologia</span></div>
+            <div class="consultas-agenda-profissional"><strong>Profissional 02</strong><span>Clínica geral</span></div>
+            <div class="consultas-agenda-profissional"><strong>Profissional 03</strong><span>Pediatria</span></div>
+            <div class="consultas-agenda-profissional"><strong>Profissional 04</strong><span>Ortopedia</span></div>
+
+            <span class="consultas-agenda-hora">08:00</span>
+            <div class="consultas-slot realizada"><strong>Paciente 01</strong><span>Realizada</span></div>
+            <div class="consultas-slot realizada"><strong>Paciente 02</strong><span>Realizada</span></div>
+            <div class="consultas-slot livre"><strong>Livre</strong></div>
+            <div class="consultas-slot agendada"><strong>Paciente 03</strong><span>Agendada</span></div>
+
+            <span class="consultas-agenda-hora">08:30</span>
+            <div class="consultas-slot realizada"><strong>Paciente 04</strong><span>Realizada</span></div>
+            <div class="consultas-slot atendimento"><strong>Paciente 05</strong><span>Em atendimento</span></div>
+            <div class="consultas-slot agendada"><strong>Paciente 06</strong><span>Agendada</span></div>
+            <div class="consultas-slot livre"><strong>Livre</strong></div>
+
+            <span class="consultas-agenda-hora">09:00</span>
+            <div class="consultas-slot agendada"><strong>Paciente 07</strong><span>Agendada</span></div>
+            <div class="consultas-slot agendada"><strong>Paciente 08</strong><span>Agendada</span></div>
+            <div class="consultas-slot livre"><strong>Livre</strong></div>
+            <div class="consultas-slot agendada"><strong>Paciente 09</strong><span>Agendada</span></div>
+
+            <span class="consultas-agenda-hora">09:30</span>
+            <div class="consultas-slot livre"><strong>Livre</strong></div>
+            <div class="consultas-slot agendada"><strong>Paciente 10</strong><span>Agendada</span></div>
+            <div class="consultas-slot agendada"><strong>Paciente 11</strong><span>Agendada</span></div>
+            <div class="consultas-slot livre"><strong>Livre</strong></div>
+
+            <span class="consultas-agenda-hora">10:00</span>
+            <div class="consultas-slot agendada"><strong>Paciente 12</strong><span>Agendada</span></div>
+            <div class="consultas-slot livre"><strong>Livre</strong></div>
+            <div class="consultas-slot livre"><strong>Livre</strong></div>
+            <div class="consultas-slot agendada"><strong>Paciente 13</strong><span>Agendada</span></div>
+
+            <span class="consultas-agenda-hora">10:30</span>
+            <div class="consultas-slot agendada"><strong>Paciente 14</strong><span>Agendada</span></div>
+            <div class="consultas-slot livre"><strong>Livre</strong></div>
+            <div class="consultas-slot agendada"><strong>Paciente 15</strong><span>Agendada</span></div>
+            <div class="consultas-slot livre"><strong>Livre</strong></div>
+
+            <span class="consultas-agenda-hora">11:00</span>
+            <div class="consultas-slot livre"><strong>Livre</strong></div>
+            <div class="consultas-slot agendada"><strong>Paciente 16</strong><span>Agendada</span></div>
+            <div class="consultas-slot agendada"><strong>Paciente 17</strong><span>Agendada</span></div>
+            <div class="consultas-slot agendada"><strong>Paciente 18</strong><span>Agendada</span></div>
+        </div>
+    </section>
+
+    <!-- lista completa -->
+    <section class="consultas-card consultas-card-tabela">
+        <div class="consultas-card-cabecalho">
+            <h3>Todas as consultas</h3>
+            <span class="consultas-suave">000 resultados</span>
+        </div>
+
+        <div class="consultas-tabela-rolagem">
+            <table class="consultas-tabela">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Hora</th>
+                        <th>Paciente</th>
+                        <th>Profissional</th>
+                        <th>Motivo</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="consultas-mono">dd/mm/aaaa</td>
+                        <td class="consultas-mono">08:00</td>
+                        <td><strong>Paciente 01</strong></td>
+                        <td>Profissional 01<span class="consultas-sub">Cardiologia</span></td>
+                        <td>Motivo da consulta</td>
+                        <td><span class="consultas-status realizada">Realizada</span></td>
+                        <td class="consultas-acoes"><a href="#consultas">Ver</a></td>
+                    </tr>
+                    <tr>
+                        <td class="consultas-mono">dd/mm/aaaa</td>
+                        <td class="consultas-mono">08:30</td>
+                        <td><strong>Paciente 04</strong></td>
+                        <td>Profissional 02<span class="consultas-sub">Clínica geral</span></td>
+                        <td>Motivo da consulta</td>
+                        <td><span class="consultas-status atendimento">Em atendimento</span></td>
+                        <td class="consultas-acoes"><a href="#consultas">Ver</a></td>
+                    </tr>
+                    <tr>
+                        <td class="consultas-mono">dd/mm/aaaa</td>
+                        <td class="consultas-mono">09:00</td>
+                        <td><strong>Paciente 06</strong></td>
+                        <td>Profissional 01<span class="consultas-sub">Cardiologia</span></td>
+                        <td>Motivo da consulta</td>
+                        <td><span class="consultas-status agendada">Agendada</span></td>
+                        <td class="consultas-acoes">
+                            <a href="#consultas">Ver</a>
+                            <a href="#consultas">Editar</a>
+                            <a href="#consultas" class="consultas-acao-cancelar">Cancelar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="consultas-mono">dd/mm/aaaa</td>
+                        <td class="consultas-mono">09:30</td>
+                        <td><strong>Paciente 09</strong></td>
+                        <td>Profissional 03<span class="consultas-sub">Pediatria</span></td>
+                        <td>Motivo da consulta</td>
+                        <td><span class="consultas-status agendada">Agendada</span></td>
+                        <td class="consultas-acoes">
+                            <a href="#consultas">Ver</a>
+                            <a href="#consultas">Editar</a>
+                            <a href="#consultas" class="consultas-acao-cancelar">Cancelar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="consultas-mono">dd/mm/aaaa</td>
+                        <td class="consultas-mono">10:00</td>
+                        <td><strong>Paciente 11</strong></td>
+                        <td>Profissional 04<span class="consultas-sub">Ortopedia</span></td>
+                        <td>Motivo da consulta</td>
+                        <td><span class="consultas-status cancelada">Cancelada</span></td>
+                        <td class="consultas-acoes"><a href="#consultas">Ver</a></td>
+                    </tr>
+                    <tr>
+                        <td class="consultas-mono">dd/mm/aaaa</td>
+                        <td class="consultas-mono">10:30</td>
+                        <td><strong>Paciente 12</strong></td>
+                        <td>Profissional 01<span class="consultas-sub">Cardiologia</span></td>
+                        <td>Motivo da consulta</td>
+                        <td><span class="consultas-status agendada">Agendada</span></td>
+                        <td class="consultas-acoes">
+                            <a href="#consultas">Ver</a>
+                            <a href="#consultas">Editar</a>
+                            <a href="#consultas" class="consultas-acao-cancelar">Cancelar</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- paginação -->
+        <footer class="consultas-paginacao">
+            <span class="consultas-suave">Mostrando 1–6 de 000 consultas</span>
+            <div class="consultas-paginas">
+                <button class="consultas-btn consultas-btn-contorno">Anterior</button>
+                <button class="consultas-btn consultas-btn-pagina ativa" aria-current="page">1</button>
+                <button class="consultas-btn consultas-btn-pagina">2</button>
+                <button class="consultas-btn consultas-btn-contorno">Próxima</button>
+            </div>
+        </footer>
+    </section>
+
+</div>
