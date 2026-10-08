@@ -1,18 +1,38 @@
 <header class="main-header">
-    <div class="logo">
-        
-        <h2>Sistema Hospitalar</h2>
+
+    <div class="header-left">
+        <button class="svg-icon">
+            <img src="./assets/icons/menu-burger.svg" alt="Menu" />
+        </button>
+
+        <div class="logo">
+            
+            <h2>Sistema Hospitalar</h2>
+            <span>Gestão de atendimentos</span>
+        </div>
+
+        <div class="search-bar">
+            <div class="svg-icon search-icon">
+                <img src="./assets/icons/search.svg" alt="Pesquisar"  />
+            </div>
+            
+            <input type="text" placeholder="Buscar paciente, CPF ou profissional" />
+        </div>
     </div>
-    
-    <nav class="main-nav">
 
-        <!-- os links usam '#' para não recarregar a página toda -->
-        <a href="#dashboard">Início</a>
-        <a href="#pacientes">Pacientes</a>
-        <a href="#profissionais">Profissionais</a>
-        <a href="#consultas">Consultas</a>
-        <a href="#internacoes">Internações</a>
-        <a href="#quartos">Quartos</a>
+    <div class="header-right">
+        <button class="svg-icon">
+            <img src="./assets/icons/bell.svg" alt="Notificações" />
+        </button>
 
-    </nav>
+        <div class="user-profile">
+            <div class="user-avatar">
+                <img src="./assets/icons/user.svg" alt="Avatar" />
+            </div>
+            <div class="user-info">
+                <span class="user.name">Nome de usuário </span>
+                <span class="user.role">Perfil de acesso </span>
+            </div>
+        </div>
+    </div>
 </header>
