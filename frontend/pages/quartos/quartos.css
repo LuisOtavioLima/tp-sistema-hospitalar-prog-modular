@@ -1,11 +1,4 @@
 .qto-pagina {
-    --qto-texto-suave: #475569;
-    --qto-linha: #E2E8F0;
-    --qto-superficie: #F8FAFC;
-    --qto-borda-forte: #94A3B8;
-    --qto-primaria-hover: #1D3FB8;
-    --qto-escuro: #1E293B;
-
     max-width: 1240px;
     margin: 0 auto;
     padding: 32px;
@@ -16,7 +9,7 @@
 }
 
 .qto-mono {
-    font-family: ui-monospace, Menlo, Consolas, monospace;
+    font-family: var(--fonte-mono);
     font-size: 0.8125rem;
 }
 
@@ -36,7 +29,7 @@
 
 .qto-trilha {
     font-size: 0.8125rem;
-    color: var(--qto-texto-suave);
+    color: var(--cor-texto-suave);
 }
 
 .qto-trilha a {
@@ -51,7 +44,7 @@
 
 .qto-subtitulo {
     font-size: 0.875rem;
-    color: var(--qto-texto-suave);
+    color: var(--cor-texto-suave);
 }
 
 .qto-card {
@@ -79,17 +72,17 @@
 .qto-botao--primario {
     background-color: var(--cor-primaria);
     border-color: var(--cor-primaria);
-    color: #FFFFFF;
+    color: var(--cor-texto-invertido);
 }
 
 .qto-botao--primario:hover {
-    background-color: var(--qto-primaria-hover);
-    border-color: var(--qto-primaria-hover);
+    background-color: var(--cor-primaria-hover);
+    border-color: var(--cor-primaria-hover);
 }
 
 .qto-botao--secundario {
     background-color: var(--cor-fundo-secundaria);
-    border-color: var(--qto-borda-forte);
+    border-color: var(--cor-borda-forte);
     color: var(--cor-texto);
     font-weight: 500;
 }
@@ -102,7 +95,7 @@
     width: 44px;
     padding: 0;
     background-color: var(--cor-fundo-secundaria);
-    border-color: var(--qto-borda-forte);
+    border-color: var(--cor-borda-forte);
     color: var(--cor-texto);
 }
 
@@ -125,7 +118,7 @@
 }
 
 .qto-link:hover {
-    color: var(--qto-primaria-hover);
+    color: var(--cor-primaria-hover);
 }
 
 .qto-pagina button:focus-visible,
@@ -155,7 +148,7 @@
     min-height: 44px;
     padding: 0 12px;
     background-color: var(--cor-fundo-secundaria);
-    border: 1px solid var(--qto-borda-forte);
+    border: 1px solid var(--cor-borda-forte);
     border-radius: 6px;
     font-family: inherit;
     font-size: 0.875rem;
@@ -168,11 +161,11 @@
 
 .qto-campo__dica {
     font-size: 0.75rem;
-    color: var(--qto-texto-suave);
+    color: var(--cor-texto-suave);
 }
 
 .qto-obrigatorio {
-    color: #B42318;
+    color: var(--cor-perigo);
 }
 
 .qto-resumo {
@@ -192,11 +185,11 @@
 .qto-indicador__rotulo {
     font-size: 0.8125rem;
     font-weight: 500;
-    color: var(--qto-texto-suave);
+    color: var(--cor-texto-suave);
 }
 
 .qto-indicador__valor {
-    font-family: ui-monospace, Menlo, Consolas, monospace;
+    font-family: var(--fonte-mono);
     font-size: 1.75rem;
     font-weight: 500;
     line-height: 1.1;
@@ -205,7 +198,7 @@
 .qto-indicador__total {
     font-size: 0.875rem;
     font-weight: 400;
-    color: var(--qto-texto-suave);
+    color: var(--cor-texto-suave);
 }
 
 .qto-filtros {
@@ -260,7 +253,7 @@
     min-height: 44px;
     padding: 0 16px;
     background-color: var(--cor-fundo-secundaria);
-    border: 1px solid var(--qto-borda-forte);
+    border: 1px solid var(--cor-borda-forte);
     border-radius: 6px;
     font-size: 0.875rem;
     font-weight: 500;
@@ -268,9 +261,9 @@
 }
 
 .qto-opcao input:checked + span {
-    background-color: var(--qto-escuro);
-    border-color: var(--qto-escuro);
-    color: #FFFFFF;
+    background-color: var(--cor-texto);
+    border-color: var(--cor-texto);
+    color: var(--cor-texto-invertido);
 }
 
 .qto-opcao input:focus-visible + span {
@@ -312,13 +305,13 @@
 }
 
 .qto-leito--ocupado {
-    background-color: var(--qto-escuro);
-    border: 1px solid var(--qto-escuro);
+    background-color: var(--cor-texto);
+    border: 1px solid var(--cor-texto);
 }
 
 .qto-leito--livre {
     background-color: var(--cor-fundo-secundaria);
-    border: 1.5px dashed var(--qto-borda-forte);
+    border: 1.5px dashed var(--cor-borda-forte);
 }
 
 .qto-andar {
@@ -344,7 +337,7 @@
 
 .qto-andar__resumo {
     font-size: 0.8125rem;
-    color: var(--qto-texto-suave);
+    color: var(--cor-texto-suave);
 }
 
 .qto-grade {
@@ -374,7 +367,7 @@
 
 .qto-quarto__ocupacao {
     font-size: 0.8125rem;
-    color: var(--qto-texto-suave);
+    color: var(--cor-texto-suave);
 }
 
 .qto-quarto__ocupacao .qto-mono {
@@ -400,14 +393,14 @@
 
 .qto-selo--disponivel {
     background-color: var(--cor-fundo-secundaria);
-    border: 1px solid var(--qto-borda-forte);
-    color: #334155;
+    border: 1px solid var(--cor-borda-forte);
+    color: var(--cor-texto-suave);
 }
 
 .qto-selo--ocupado {
-    background-color: var(--qto-escuro);
-    border: 1px solid var(--qto-escuro);
-    color: #FFFFFF;
+    background-color: var(--cor-texto);
+    border: 1px solid var(--cor-texto);
+    color: var(--cor-texto-invertido);
 }
 
 .qto-modal {
@@ -422,7 +415,7 @@
 }
 
 .qto-modal::backdrop {
-    background-color: rgb(15 23 42 / 0.5);
+    background-color: var(--cor-sobreposicao);
 }
 
 .qto-modal__form {
@@ -466,14 +459,14 @@
     gap: 10px;
     min-height: 44px;
     padding: 0 12px;
-    background-color: var(--qto-superficie);
+    background-color: var(--cor-superficie);
     border: 1px solid var(--cor-secundaria);
     border-radius: 6px;
 }
 
 .qto-situacao-atual__texto {
     font-size: 0.8125rem;
-    color: var(--qto-texto-suave);
+    color: var(--cor-texto-suave);
 }
 
 .qto-modal__rodape {
@@ -482,7 +475,7 @@
     justify-content: flex-end;
     gap: 12px;
     padding: 16px 24px;
-    background-color: var(--qto-superficie);
+    background-color: var(--cor-superficie);
     border-top: 1px solid var(--cor-secundaria);
 }
 
