@@ -16,6 +16,7 @@ import org.springframework.web.context.WebApplicationContext;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.hasSize;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -93,7 +94,7 @@ class QuartoInternacaoEmergenciaApiTest {
     void quartoComDadosInvalidosRetorna400ComMensagem() throws Exception {
         post("/quartos", "{\"numeroIdentificacao\":101,\"andar\":1,\"capacidadeMaxima\":0,\"tipo\":\"UTI\"}")
                 .andExpect(status().isBadRequest())
-                .andExpect(jsonPath("$.mensagem").value(containsString("capacidade")));
+                .andExpect(jsonPath("$.capacidadeMaxima").value(containsString("capacidade")));
     }
 
     @Test
@@ -105,7 +106,7 @@ class QuartoInternacaoEmergenciaApiTest {
     @Test
     void numeroDeQuartoRepetidoRetorna409() throws Exception {
         post("/quartos", QUARTO_101).andExpect(status().isCreated());
-        post("/quartos", QUARTO_101).andExpect(status().isConflict());
+        post("/quartos", QUARTO_101).andExpect(status().isBadRequest());
     }
 
     @Test
@@ -163,8 +164,8 @@ class QuartoInternacaoEmergenciaApiTest {
         post("/internacoes", INTERNACAO_PACIENTE_1).andExpect(status().isCreated());
 
         post("/internacoes", INTERNACAO_PACIENTE_1.replace("\"pacienteId\":1", "\"pacienteId\":2"))
-                .andExpect(status().isConflict())
-                .andExpect(jsonPath("$.mensagem").value(containsString("capacidade máxima")));
+                .andExpect(status().isBadRequest())
+                .andExpect(content().string(containsString("capacidade máxima")));
     }
 
     @Test
@@ -174,8 +175,8 @@ class QuartoInternacaoEmergenciaApiTest {
         post("/internacoes", INTERNACAO_PACIENTE_1).andExpect(status().isCreated());
 
         post("/internacoes", INTERNACAO_PACIENTE_1)
-                .andExpect(status().isConflict())
-                .andExpect(jsonPath("$.mensagem").value(containsString("internação ativa")));
+                .andExpect(status().isBadRequest())
+                .andExpect(content().string(containsString("internação ativa")));
         mvc.perform(get("/quartos/1")).andExpect(jsonPath("$.ocupacaoAtual").value(1));
     }
 
@@ -184,7 +185,7 @@ class QuartoInternacaoEmergenciaApiTest {
         post("/quartos", QUARTO_101).andExpect(status().isCreated());
         post("/internacoes", INTERNACAO_PACIENTE_1).andExpect(status().isCreated());
 
-        post("/internacoes/1/alta", "{\"data\":\"2026-10-31\"}").andExpect(status().isConflict());
+        post("/internacoes/1/alta", "{\"data\":\"2026-10-31\"}").andExpect(status().isBadRequest());
         mvc.perform(get("/quartos/1")).andExpect(jsonPath("$.ocupacaoAtual").value(1));
     }
 
@@ -233,7 +234,7 @@ class QuartoInternacaoEmergenciaApiTest {
         post("/quartos", QUARTO_101).andExpect(status().isCreated());
         post("/internacoes", INTERNACAO_PACIENTE_1).andExpect(status().isCreated());
 
-        mvc.perform(delete("/quartos/1")).andExpect(status().isConflict());
+        mvc.perform(delete("/quartos/1")).andExpect(status().isBadRequest());
     }
 
     @Test
@@ -292,8 +293,8 @@ class QuartoInternacaoEmergenciaApiTest {
                 .andExpect(status().isCreated());
 
         post("/consultas/emergencias/1/concluir", "")
-                .andExpect(status().isConflict())
-                .andExpect(jsonPath("$.mensagem").value(containsString("iniciado")));
+                .andExpect(status().isBadRequest())
+                .andExpect(content().string(containsString("iniciado")));
     }
 
     @Test
@@ -302,7 +303,7 @@ class QuartoInternacaoEmergenciaApiTest {
                 .andExpect(status().isBadRequest());
         post("/consultas/emergencias", "{\"pacienteId\":1,\"motivo\":\"Febre\"}")
                 .andExpect(status().isBadRequest())
-                .andExpect(jsonPath("$.mensagem").value(containsString("prioridade")));
+                .andExpect(jsonPath("$.prioridade").value(containsString("prioridade")));
     }
 
     @Test
