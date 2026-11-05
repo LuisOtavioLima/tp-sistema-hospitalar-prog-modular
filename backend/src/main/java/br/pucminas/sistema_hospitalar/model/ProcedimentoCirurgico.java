@@ -11,7 +11,7 @@ public class ProcedimentoCirurgico extends Atendimento {
     private String observacoesPosOperatorias;
     private LocalDateTime dataHoraPrevista;
     private LocalDateTime dataHoraEfetiva;
-    private Paciente paciente; 
+    private Paciente paciente;
     private Cirurgiao cirurgiao;
     private SituacaoProcedimento situacao = SituacaoProcedimento.AGENDADO;
 
@@ -41,4 +41,10 @@ public class ProcedimentoCirurgico extends Atendimento {
     public LocalDateTime getDataHoraEfetiva() { return dataHoraEfetiva; }
     public Cirurgiao getCirurgiao() { return cirurgiao; }
     public void setCirurgiao(Cirurgiao cirurgiao) { this.cirurgiao = cirurgiao; }
+    public String getObservacoesPreOperatorias() {return observacoesPreOperatorias;}
+    public void setObservacoesPreOperatorias(String observacoesPreOperatorias) {this.observacoesPreOperatorias = observacoesPreOperatorias;}
+    public String getObservacoesPosOperatorias() {return observacoesPosOperatorias;}
+    public void setObservacoesPosOperatorias(String observacoesPosOperatorias) {this.observacoesPosOperatorias = observacoesPosOperatorias;}
+    public Paciente getPaciente() {return paciente;}
+    public void setPaciente(Paciente paciente) {this.paciente = paciente;}
 }
