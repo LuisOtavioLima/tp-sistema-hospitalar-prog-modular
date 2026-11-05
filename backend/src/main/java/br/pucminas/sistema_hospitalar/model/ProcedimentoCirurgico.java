@@ -1,20 +1,35 @@
 package br.pucminas.sistema_hospitalar.model;
 
+import br.pucminas.sistema_hospitalar.exception.RegraNegocioException;
+
 import java.time.LocalDateTime;
 
-class Atendimento {} 
 
 public class ProcedimentoCirurgico extends Atendimento {
-    private Long id;
     private String descricao;
     private String tipoCirurgia;
     private String observacoesPreOperatorias;
     private String observacoesPosOperatorias;
     private LocalDateTime dataHoraPrevista;
     private LocalDateTime dataHoraEfetiva;
-    private Paciente paciente;
     private Cirurgiao cirurgiao;
     private SituacaoProcedimento situacao = SituacaoProcedimento.AGENDADO;
+
+    @Override
+    public void validarCondicoes() {
+        if (getPaciente() == null) {
+            throw new RegraNegocioException("O procedimento cirúrgico exige um paciente");
+        }
+        if (cirurgiao == null) {
+            throw new RegraNegocioException("O procedimento cirúrgico exige um cirurgião responsável");
+        }
+        if (dataHoraPrevista == null) {
+            throw new RegraNegocioException("O procedimento cirúrgico exige data e horário previstos");
+        }
+        if (descricao == null || descricao.isBlank()) {
+            throw new RegraNegocioException("O procedimento cirúrgico exige uma descrição");
+        }
+    }
 
     public void iniciarProcedimento() {
         this.situacao = SituacaoProcedimento.EM_ANDAMENTO;
@@ -46,8 +61,4 @@ public class ProcedimentoCirurgico extends Atendimento {
     public void setObservacoesPreOperatorias(String observacoesPreOperatorias) {this.observacoesPreOperatorias = observacoesPreOperatorias;}
     public String getObservacoesPosOperatorias() {return observacoesPosOperatorias;}
     public void setObservacoesPosOperatorias(String observacoesPosOperatorias) {this.observacoesPosOperatorias = observacoesPosOperatorias;}
-    public Paciente getPaciente() {return paciente;}
-    public void setPaciente(Paciente paciente) {this.paciente = paciente;}
-    public Long getId() { return id; }
-    public void setId(long id) {this.id = id;}
 }

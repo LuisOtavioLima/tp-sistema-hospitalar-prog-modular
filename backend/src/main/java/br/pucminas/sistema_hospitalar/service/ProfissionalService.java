@@ -1,7 +1,9 @@
 package br.pucminas.sistema_hospitalar.service;
 
-import br.pucminas.sistema_hospitalar.model.ProfissionalSaude;
 import br.pucminas.sistema_hospitalar.model.ProcedimentoCirurgico;
+import br.pucminas.sistema_hospitalar.model.ProfissionalSaude;
+import br.pucminas.sistema_hospitalar.repository.ProcedimentoCirurgicoRepository;
+import br.pucminas.sistema_hospitalar.repository.ProfissionalSaudeRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,20 +11,24 @@ import java.util.List;
 @Service
 public class ProfissionalService {
 
-    // Injete seu Repository aqui (ex: ProfissionalRepository)
+    private final ProfissionalSaudeRepository profissionalRepository;
+    private final ProcedimentoCirurgicoRepository procedimentoRepository;
+
+    public ProfissionalService(ProfissionalSaudeRepository profissionalRepository,
+                               ProcedimentoCirurgicoRepository procedimentoRepository) {
+        this.profissionalRepository = profissionalRepository;
+        this.procedimentoRepository = procedimentoRepository;
+    }
 
     public List<ProfissionalSaude> buscarPorEspecialidade(String especialidade) {
-        // Lógica para buscar MedicoEspecialista pela string da especialidade
-        return null; 
+        return profissionalRepository.buscarPorEspecialidade(especialidade);
     }
 
     public List<ProfissionalSaude> listarTodos() {
-        // Retorna findAll() do repository
-        return null;
+        return profissionalRepository.listarTodos();
     }
 
     public List<ProcedimentoCirurgico> buscarProcedimentosPorCirurgiaoId(Long id) {
-        // Lógica para buscar os procedimentos onde cirurgiao.id == id
-        return null;
+        return procedimentoRepository.buscarPorCirurgiaoId(id);
     }
 }
