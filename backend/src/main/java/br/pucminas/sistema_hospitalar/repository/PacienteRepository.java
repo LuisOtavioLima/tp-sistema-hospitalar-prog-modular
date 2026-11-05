@@ -19,7 +19,7 @@ public class PacienteRepository {
             paciente.setId(contadorId.getAndIncrement());
             pacientes.add(paciente);
         } else {
-            // Atualização: remove o antigo e insere o novo
+            // att: remove o antigo e insere o novo
             remover(paciente.getId());
             pacientes.add(paciente);
         }

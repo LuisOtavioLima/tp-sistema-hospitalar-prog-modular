@@ -24,7 +24,7 @@ public class PacienteService {
     }
 
     public Paciente buscarPorId(Long id) {
-        // Lançar exceção genérica por enquanto. Trataremos isso no Global Exception Handler!
+        // lançar exceção genérica por enquanto. tratar isso no Global Exception Handler
         return repository.buscarPorId(id)
                 .orElseThrow(() -> new RuntimeException("Paciente não encontrado"));
     }
