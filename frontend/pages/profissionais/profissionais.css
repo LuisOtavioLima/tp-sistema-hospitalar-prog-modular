@@ -1,11 +1,4 @@
 .prof-pagina {
-    --prof-texto-suave: #475569;
-    --prof-linha: #E2E8F0;
-    --prof-superficie: #F8FAFC;
-    --prof-borda-forte: #94A3B8;
-    --prof-primaria-hover: #1D3FB8;
-    --prof-escuro: #1E293B;
-
     max-width: 1240px;
     margin: 0 auto;
     padding: 32px;
@@ -16,7 +9,7 @@
 }
 
 .prof-mono {
-    font-family: ui-monospace, Menlo, Consolas, monospace;
+    font-family: var(--fonte-mono);
     font-size: 0.8125rem;
 }
 
@@ -36,7 +29,7 @@
 
 .prof-trilha {
     font-size: 0.8125rem;
-    color: var(--prof-texto-suave);
+    color: var(--cor-texto-suave);
 }
 
 .prof-trilha a {
@@ -51,7 +44,7 @@
 
 .prof-subtitulo {
     font-size: 0.875rem;
-    color: var(--prof-texto-suave);
+    color: var(--cor-texto-suave);
 }
 
 .prof-secao-titulo {
@@ -85,17 +78,17 @@
 .prof-botao--primario {
     background-color: var(--cor-primaria);
     border-color: var(--cor-primaria);
-    color: #FFFFFF;
+    color: var(--cor-texto-invertido);
 }
 
 .prof-botao--primario:hover {
-    background-color: var(--prof-primaria-hover);
-    border-color: var(--prof-primaria-hover);
+    background-color: var(--cor-primaria-hover);
+    border-color: var(--cor-primaria-hover);
 }
 
 .prof-botao--secundario {
     background-color: var(--cor-fundo-secundaria);
-    border-color: var(--prof-borda-forte);
+    border-color: var(--cor-borda-forte);
     color: var(--cor-texto);
     font-weight: 500;
 }
@@ -108,7 +101,7 @@
     width: 44px;
     padding: 0;
     background-color: var(--cor-fundo-secundaria);
-    border-color: var(--prof-borda-forte);
+    border-color: var(--cor-borda-forte);
     color: var(--cor-texto);
 }
 
@@ -131,7 +124,7 @@
 }
 
 .prof-link:hover {
-    color: var(--prof-primaria-hover);
+    color: var(--cor-primaria-hover);
 }
 
 .prof-pagina button:focus-visible,
@@ -161,7 +154,7 @@
     min-height: 44px;
     padding: 0 12px;
     background-color: var(--cor-fundo-secundaria);
-    border: 1px solid var(--prof-borda-forte);
+    border: 1px solid var(--cor-borda-forte);
     border-radius: 6px;
     font-family: inherit;
     font-size: 0.875rem;
@@ -170,11 +163,11 @@
 
 .prof-campo__dica {
     font-size: 0.75rem;
-    color: var(--prof-texto-suave);
+    color: var(--cor-texto-suave);
 }
 
 .prof-obrigatorio {
-    color: #B42318;
+    color: var(--cor-perigo);
 }
 
 .prof-filtros {
@@ -213,19 +206,19 @@
     padding: 0 16px;
     text-align: left;
     white-space: nowrap;
-    background-color: var(--prof-superficie);
+    background-color: var(--cor-superficie);
     border-bottom: 1px solid var(--cor-secundaria);
     font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    color: var(--prof-texto-suave);
+    color: var(--cor-texto-suave);
 }
 
 .prof-tabela td {
     height: 56px;
     padding: 8px 16px;
-    border-bottom: 1px solid var(--prof-linha);
+    border-bottom: 1px solid var(--cor-borda);
 }
 
 .prof-tabela__nome {
@@ -237,7 +230,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    color: var(--prof-texto-suave);
+    color: var(--cor-texto-suave);
 }
 
 .prof-tabela__acoes {
@@ -255,7 +248,7 @@
 
 .prof-paginacao__resumo {
     font-size: 0.8125rem;
-    color: var(--prof-texto-suave);
+    color: var(--cor-texto-suave);
 }
 
 .prof-paginacao__botoes {
@@ -282,13 +275,13 @@
 }
 
 .prof-pagina-botao--atual {
-    background-color: var(--prof-escuro);
-    border-color: var(--prof-escuro);
-    color: #FFFFFF;
+    background-color: var(--cor-texto);
+    border-color: var(--cor-texto);
+    color: var(--cor-texto-invertido);
 }
 
 .prof-pagina-botao:disabled {
-    color: var(--prof-borda-forte);
+    color: var(--cor-borda-forte);
     cursor: not-allowed;
 }
 
@@ -351,13 +344,13 @@
     font-size: 0.75rem;
     font-weight: 600;
     text-align: center;
-    color: var(--prof-texto-suave);
+    color: var(--cor-texto-suave);
 }
 
 .prof-grade tbody th {
     width: 64px;
     text-align: left;
-    font-family: ui-monospace, Menlo, Consolas, monospace;
+    font-family: var(--fonte-mono);
     font-weight: 400;
 }
 
@@ -371,20 +364,20 @@
 
 .prof-slot--livre {
     background-color: var(--cor-fundo-secundaria);
-    border: 1px dashed var(--prof-borda-forte);
-    color: var(--prof-texto-suave);
+    border: 1px dashed var(--cor-borda-forte);
+    color: var(--cor-texto-suave);
 }
 
 .prof-slot--consulta {
-    background-color: var(--prof-escuro);
-    border: 1px solid var(--prof-escuro);
-    color: #FFFFFF;
+    background-color: var(--cor-texto);
+    border: 1px solid var(--cor-texto);
+    color: var(--cor-texto-invertido);
 }
 
 .prof-slot--fora {
-    background: repeating-linear-gradient(135deg, #EEF2F6 0, #EEF2F6 6px, #DDE3EA 6px, #DDE3EA 12px);
+    background: repeating-linear-gradient(135deg, var(--cor-superficie) 0, var(--cor-superficie) 6px, var(--cor-borda) 6px, var(--cor-borda) 12px);
     border: 1px solid var(--cor-secundaria);
-    color: #334155;
+    color: var(--cor-texto-suave);
 }
 
 @media (max-width: 640px) {
@@ -405,7 +398,7 @@
 }
 
 .prof-modal::backdrop {
-    background-color: rgb(15 23 42 / 0.5);
+    background-color: var(--cor-sobreposicao);
 }
 
 .prof-modal__form {
@@ -448,7 +441,7 @@
     justify-content: flex-end;
     gap: 12px;
     padding: 16px 24px;
-    background-color: var(--prof-superficie);
+    background-color: var(--cor-superficie);
     border-top: 1px solid var(--cor-secundaria);
 }
 
