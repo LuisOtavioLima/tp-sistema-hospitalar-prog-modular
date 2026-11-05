@@ -2,12 +2,12 @@ package br.pucminas.sistema_hospitalar.controller;
 
 import br.pucminas.sistema_hospitalar.model.Paciente;
 import br.pucminas.sistema_hospitalar.service.PacienteService;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -26,13 +26,13 @@ public class PacienteControllerTest {
     @Autowired
     private ObjectMapper objectMapper;
 
-    @MockBean
+    @MockitoBean
     private PacienteService service;
 
     @Test
     public void deveCriarPacienteComSucesso() throws Exception {
         // CPF válido gerado matematicamente apenas para o teste passar
-        Paciente paciente = new Paciente(null, "Luís Lima", "52998224025", "luis@email.com", "31999999999", LocalDate.of(2000, 1, 1));
+        Paciente paciente = new Paciente(null, "José Maria", "52998224025", "jose@email.com", "31999999999", LocalDate.of(2000, 1, 1));
         
         Mockito.when(service.salvar(Mockito.any(Paciente.class))).thenReturn(paciente);
 
@@ -45,7 +45,7 @@ public class PacienteControllerTest {
     @Test
     public void deveRetornarErro400QuandoCpfInvalido() throws Exception {
         // CPF com formato errado para forçar o erro no Hibernate Validator
-        Paciente paciente = new Paciente(null, "Luís Lima", "12345678900", "luis@email.com", "31999999999", LocalDate.of(2000, 1, 1));
+        Paciente paciente = new Paciente(null, "José Maria", "12345678900", "jose@email.com", "31999999999", LocalDate.of(2000, 1, 1));
 
         mockMvc.perform(post("/pacientes")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -57,7 +57,7 @@ public class PacienteControllerTest {
     @Test
     public void deveRetornarErro400QuandoEmailInvalido() throws Exception {
         // E-mail sem o '@' para forçar a falha da anotação @Email
-        Paciente paciente = new Paciente(null, "Luís Lima", "52998224025", "luis.email.com", "31999999999", LocalDate.of(2000, 1, 1));
+        Paciente paciente = new Paciente(null, "José Maria", "52998224025", "jose.email.com", "31999999999", LocalDate.of(2000, 1, 1));
 
         mockMvc.perform(post("/pacientes")
                 .contentType(MediaType.APPLICATION_JSON)
