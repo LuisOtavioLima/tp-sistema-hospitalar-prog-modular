@@ -2,10 +2,12 @@ package br.pucminas.sistema_hospitalar.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -31,6 +33,21 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String> tratarRegraNegocio(RegraNegocioException ex) {
         // Retorna 400 (Bad Request) com a mensagem clara, conforme o roteiro
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage()); 
+    }
+
+    @ExceptionHandler(RecursoNaoEncontradoException.class)
+    public ResponseEntity<String> tratarNaoEncontrado(RecursoNaoEncontradoException ex) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
+    }
+
+    @ExceptionHandler(HttpMessageNotReadableException.class)
+    public ResponseEntity<String> tratarCorpoInvalido(HttpMessageNotReadableException ex) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("O corpo da requisição é inválido ou contém um valor não permitido");
+    }
+
+    @ExceptionHandler(MethodArgumentTypeMismatchException.class)
+    public ResponseEntity<String> tratarParametroInvalido(MethodArgumentTypeMismatchException ex) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Valor inválido para o parâmetro " + ex.getName());
     }
 
     // 3. Tratamento genérico para o "Paciente não encontrado" que definimos no Service
