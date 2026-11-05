@@ -1,12 +1,14 @@
 package br.pucminas.sistema_hospitalar.repository;
 
 import br.pucminas.sistema_hospitalar.model.ProfissionalSaude;
+import br.pucminas.sistema_hospitalar.model.MedicoEspecialista; // Importe a classe filha
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.stream.Collectors;
 
 @Repository
 public class ProfissionalSaudeRepository {
@@ -36,5 +38,15 @@ public class ProfissionalSaudeRepository {
 
     public boolean remover(Long id) {
         return profissionais.removeIf(p -> p.getId().equals(id));
+    }
+
+    // NOVO MÉTODO PARA FILTRAR POR ESPECIALIDADE
+    public List<ProfissionalSaude> buscarPorEspecialidade(String especialidade) {
+        return profissionais.stream()
+                .filter(p -> p instanceof MedicoEspecialista) // Garante que é um especialista
+                .map(p -> (MedicoEspecialista) p)             // Faz o cast para acessar a especialidade
+                .filter(m -> m.getEspecialidade() != null && 
+                             m.getEspecialidade().equalsIgnoreCase(especialidade))
+                .collect(Collectors.toList());
     }
 }

@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 class Atendimento {} 
 
 public class ProcedimentoCirurgico extends Atendimento {
+    private Long id;
     private String descricao;
     private String tipoCirurgia;
     private String observacoesPreOperatorias;
@@ -47,4 +48,6 @@ public class ProcedimentoCirurgico extends Atendimento {
     public void setObservacoesPosOperatorias(String observacoesPosOperatorias) {this.observacoesPosOperatorias = observacoesPosOperatorias;}
     public Paciente getPaciente() {return paciente;}
     public void setPaciente(Paciente paciente) {this.paciente = paciente;}
+    public Long getId() { return id; }
+    public void setId(long id) {this.id = id;}
 }
