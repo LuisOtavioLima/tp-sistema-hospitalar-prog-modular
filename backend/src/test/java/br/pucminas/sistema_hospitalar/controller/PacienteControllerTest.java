@@ -32,7 +32,7 @@ public class PacienteControllerTest {
     @Test
     public void deveCriarPacienteComSucesso() throws Exception {
         // CPF válido gerado matematicamente apenas para o teste passar
-        Paciente paciente = new Paciente(null, "José Maria", "52998224025", "jose@email.com", "31999999999", LocalDate.of(2000, 1, 1));
+        Paciente paciente = new Paciente(null, "José Maria", "52998224725", "jose@email.com", "31999999999", LocalDate.of(2000, 1, 1));
         
         Mockito.when(service.salvar(Mockito.any(Paciente.class))).thenReturn(paciente);
 
@@ -57,7 +57,7 @@ public class PacienteControllerTest {
     @Test
     public void deveRetornarErro400QuandoEmailInvalido() throws Exception {
         // E-mail sem o '@' para forçar a falha da anotação @Email
-        Paciente paciente = new Paciente(null, "José Maria", "52998224025", "jose.email.com", "31999999999", LocalDate.of(2000, 1, 1));
+        Paciente paciente = new Paciente(null, "José Maria", "52998224725", "jose.email.com", "31999999999", LocalDate.of(2000, 1, 1));
 
         mockMvc.perform(post("/pacientes")
                 .contentType(MediaType.APPLICATION_JSON)
