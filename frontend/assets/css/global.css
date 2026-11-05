@@ -1,15 +1,26 @@
 /* variáveis globais */
 :root {
-    --cor-primaria: #254EDB;    
-    --cor-secundaria: #CBD5E1;  
-    --cor-fundo: #F2F2EF;   
-    --cor-fundo-secundaria: #FFFFFF;    
-    --cor-texto: #1E293B;
-    --cor-texto-suave: #64748B;
+    --cor-primaria: #254EDB;
+    --cor-primaria-hover: #1D3FB8;
     --cor-primaria-suave: #E4EAFB;
+    --cor-primaria-borda: #C9D5F5;
+    --cor-secundaria: #CBD5E1;
+    --cor-fundo: #F2F2EF;
+    --cor-fundo-secundaria: #FFFFFF;
+    --cor-superficie: #F8FAFC;
+    --cor-superficie-neutra: #E7E7E2;
+    --cor-texto: #1E293B;
+    --cor-texto-suave: #475569;
+    --cor-texto-invertido: #FFFFFF;
     --cor-borda: #E2E8F0;
-    --fonte-padrao: 'Inter', sans-serif;
-    --fonte-mono: 'JetBrains Mono', ui-monospace, monospace;
+    --cor-borda-forte: #94A3B8;
+    --cor-perigo: #B42318;
+    --cor-alerta: #8A3606;
+    --cor-alerta-fundo: #FDF1E7;
+    --cor-alerta-borda: #F0C8A6;
+    --cor-sobreposicao: rgb(15 23 42 / 0.5);
+    --fonte-padrao: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    --fonte-mono: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace;
 }
 
 /* reset básico para todos os elementos */
@@ -23,6 +34,10 @@ body {
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
     font-family: var(--fonte-padrao);
+}
+
+a {
+    color: var(--cor-primaria);
 }
 
 .layout-principal {
